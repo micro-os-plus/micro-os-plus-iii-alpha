@@ -94,7 +94,7 @@ namespace os
 
             // In case the host send more than we can chew, limit the
             // string to our buffer.
-            args_buf[ARGV_BUF_ARRAY_SIZE-1] = '\0';
+            args_buf[ARGS_BUF_ARRAY_SIZE-1] = '\0';
 
             // The command line is a null terminated string
             char* p = cmdBlock.pCommandLine;

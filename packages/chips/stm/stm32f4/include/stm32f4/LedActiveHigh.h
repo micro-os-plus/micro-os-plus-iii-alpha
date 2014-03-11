@@ -34,9 +34,7 @@ namespace stm32f4
 #include "stm32f4/LedActiveHigh_Internal.h"
 
       };
-    } // na
-  mespace stm
-  32f4
+    } // namespace stm32f4
 
 #en
 dif// STM32F4_LED_ACTIVE_HIGH_H_
