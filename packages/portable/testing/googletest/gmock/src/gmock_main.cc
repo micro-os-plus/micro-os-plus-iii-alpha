@@ -41,11 +41,23 @@
 #if GTEST_OS_WINDOWS_MOBILE
 # include <tchar.h>  // NOLINT
 
-GTEST_API_ int _tmain(int argc, TCHAR** argv) {
+GTEST_API_ int _tmain(int argc, TCHAR** argv)
+  {
 #else
-GTEST_API_ int main(int argc, char** argv) {
+GTEST_API_ int
+main(int argc, char** argv)
+{
 #endif  // GTEST_OS_WINDOWS_MOBILE
-  std::cout << "Running main() from gmock_main.cc\n";
+  std::cout << "Running main() from gmock_main.cc" << std::endl;
+  std::cout << "Compiled with " __VERSION__ " ";
+#if defined(__x86_64__)
+  std::cout << "x86_64";
+#elif defined(__i386__)
+  std::cout << "i386";
+#endif
+  std::cout << std::endl;
+  std::cout << std::endl;
+
   // Since Google Mock depends on Google Test, InitGoogleMock() is
   // also responsible for initializing Google Test.  Therefore there's
   // no need for calling testing::InitGoogleTest() separately.

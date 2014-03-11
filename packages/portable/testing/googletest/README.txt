@@ -23,7 +23,7 @@ Define includes
 
 Define sources
 - gtest
-- gtest
+- gmock
 
 Exclude from build
 - gtest/src/gtest-all.cc

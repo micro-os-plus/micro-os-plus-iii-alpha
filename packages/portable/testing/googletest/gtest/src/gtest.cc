@@ -3098,8 +3098,14 @@ void XmlUnitTestResultPrinter::OnTestIterationEnd(const UnitTest& unit_test,
   FilePath output_file(output_file_);
   FilePath output_dir(output_file.RemoveFileName());
 
-  if (output_dir.CreateDirectoriesRecursively()) {
-    xmlout = posix::FOpen(output_file_.c_str(), "w");
+  // [ILG]
+  // When running on semihosting, there are no methods to create the
+  // intermediate folders, so try to write the file directly.
+  xmlout = posix::FOpen(output_file_.c_str(), "w");
+  if (xmlout == NULL) {
+    if (output_dir.CreateDirectoriesRecursively()) {
+      xmlout = posix::FOpen(output_file_.c_str(), "w");
+    }
   }
   if (xmlout == NULL) {
     // TODO(wan): report the reason of the failure.
@@ -3122,6 +3128,8 @@ void XmlUnitTestResultPrinter::OnTestIterationEnd(const UnitTest& unit_test,
   PrintXmlUnitTest(&stream, unit_test);
   fprintf(xmlout, "%s", StringStreamToString(&stream).c_str());
   fclose(xmlout);
+  // [ILG]
+  std::cout << "[----------] File \"" << output_file_ << "\" created." << std::endl;
 }
 
 // Returns an XML-escaped copy of the input string str.  If is_attribute
