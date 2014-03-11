@@ -1,359 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
-		<cconfiguration id="ilg.gnuarmeclipse.managedbuild.cross.config.lib.release.1155193907">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="ilg.gnuarmeclipse.managedbuild.cross.config.lib.release.1155193907" moduleId="org.eclipse.cdt.core.settings" name="Release">
-				<externalSettings>
-					<externalSetting>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/portable-testing-googletest"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/portable-testing-googletest/Release"/>
-						<entry flags="RESOLVED" kind="libraryFile" name="portable-testing-googletest" srcPrefixMapping="" srcRootPath=""/>
-					</externalSetting>
-				</externalSettings>
-				<extensions>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
-				</extensions>
-			</storageModule>
-			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="a" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="${cross_rm} -rf" description="" id="ilg.gnuarmeclipse.managedbuild.cross.config.lib.release.1155193907" name="Release" parent="ilg.gnuarmeclipse.managedbuild.cross.config.lib.release">
-					<folderInfo id="ilg.gnuarmeclipse.managedbuild.cross.config.lib.release.1155193907." name="/" resourcePath="">
-						<toolChain id="ilg.gnuarmeclipse.managedbuild.cross.toolchain.lib.release.1223855618" name="Cross ARM GCC" superClass="ilg.gnuarmeclipse.managedbuild.cross.toolchain.lib.release">
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level.1776368016" name="Optimization Level" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level" value="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level.size" valueType="enumerated"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.messagelength.1581177222" name="Message length (-fmessage-length=0)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.messagelength" value="true" valueType="boolean"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.signedchar.1721774651" name="'char' is signed (-fsigned-char)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.signedchar" value="true" valueType="boolean"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.functionsections.507314266" name="Function sections (-ffunction-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.functionsections" value="true" valueType="boolean"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.datasections.1516265826" name="Data sections (-fdata-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.datasections" value="true" valueType="boolean"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.allwarn.1076721242" name="Enable all common warnings (-Wall)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.allwarn" value="true" valueType="boolean"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level.563918697" name="Debug level" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.format.1055902546" name="Debug format" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.format"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.toolchain.name.1233368816" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.toolchain.name" value="GNU Tools for ARM Embedded Processors" valueType="string"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.architecture.1265788646" name="Architecture" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.architecture" value="ilg.gnuarmeclipse.managedbuild.cross.option.architecture.arm" valueType="enumerated"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.family.441642365" name="ARM family" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.family" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.mcpu.cortex-m3" valueType="enumerated"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.instructionset.2112093847" name="Instruction set" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.instructionset" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.instructionset.thumb" valueType="enumerated"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.prefix.836338723" name="Prefix" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.prefix" value="arm-none-eabi-" valueType="string"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.c.172405440" name="C compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.c" value="gcc" valueType="string"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.cpp.1437546448" name="C++ compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.cpp" value="g++" valueType="string"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.ar.1255514954" name="Archiver" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.ar" value="ar" valueType="string"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.objcopy.1737523062" name="Hex/Bin converter" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.objcopy" value="objcopy" valueType="string"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.objdump.794342144" name="Listing generator" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.objdump" value="objdump" valueType="string"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.size.875869165" name="Size command" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.size" value="size" valueType="string"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.make.1232167936" name="Build command" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.make" value="make" valueType="string"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.rm.924896627" name="Remove command" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.rm" value="rm" valueType="string"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.createflash.653688119" name="Create flash image" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.createflash" value="true" valueType="boolean"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.printsize.26068962" name="Print size" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.printsize" value="true" valueType="boolean"/>
-							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="ilg.gnuarmeclipse.managedbuild.cross.targetPlatform.1153209867" isAbstract="false" osList="all" superClass="ilg.gnuarmeclipse.managedbuild.cross.targetPlatform"/>
-							<builder buildPath="${workspace_loc:/portable-testing-googletest}/Release" id="ilg.gnuarmeclipse.managedbuild.cross.builder.1009006547" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="ilg.gnuarmeclipse.managedbuild.cross.builder"/>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.2037154585" name="Cross ARM GNU Assembler" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.usepreprocessor.861055472" name="Use preprocessor" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.usepreprocessor" value="true" valueType="boolean"/>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.include.paths.880262981" name="Include paths (-I)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../include"/>
-									<listOptionValue builtIn="false" value="../gtest/"/>
-								</option>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.defs.1406988528" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.defs" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="GTEST_LANG_CXX11=1"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_POSIX_RE=0"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_PTHREAD=0"/>
-								</option>
-								<inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.input.1526512349" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.input"/>
-							</tool>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.1152685977" name="Cross ARM C Compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths.905942825" name="Include paths (-I)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="../include"/>
-									<listOptionValue builtIn="false" value="../gtest/"/>
-								</option>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs.1798991279" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs" useByScannerDiscovery="false" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="GTEST_LANG_CXX11=1"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_POSIX_RE=0"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_PTHREAD=0"/>
-								</option>
-								<inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input.2054839485" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input"/>
-							</tool>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler.816681936" name="Cross ARM C++ Compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.include.paths.328840640" name="Include paths (-I)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="../include"/>
-									<listOptionValue builtIn="false" value="../gtest/"/>
-								</option>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.defs.1679536663" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.defs" useByScannerDiscovery="false" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="GTEST_LANG_CXX11=1"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_POSIX_RE=0"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_PTHREAD=0"/>
-								</option>
-								<inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler.input.1378499756" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler.input"/>
-							</tool>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker.1006708448" name="Cross ARM C Linker" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.gcsections.1361207949" name="Remove unused sections (-Xlinker --gc-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.gcsections" value="true" valueType="boolean"/>
-							</tool>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.linker.571505000" name="Cross ARM C++ Linker" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.linker">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.gcsections.607782536" name="Remove unused sections (-Xlinker --gc-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.gcsections" value="true" valueType="boolean"/>
-							</tool>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.archiver.263740049" name="Cross ARM GNU Archiver" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.archiver"/>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.createflash.527788269" name="Cross ARM GNU Create Flash Image" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.createflash"/>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.createlisting.1287149854" name="Cross ARM GNU Create Listing" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.createlisting">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.source.429101722" name="Display source (--source|-S)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.source" value="true" valueType="boolean"/>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.allheaders.776311971" name="Display all headers (--all-headers|-x)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.allheaders" value="true" valueType="boolean"/>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.demangle.1113982954" name="Demangle names (--demangle|-C)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.demangle" value="true" valueType="boolean"/>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.linenumbers.764819023" name="Display line numbers (--line-numbers|-l)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.linenumbers" value="true" valueType="boolean"/>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.wide.1663509096" name="Wide lines (--wide|-w)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.wide" value="true" valueType="boolean"/>
-							</tool>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.printsize.103984178" name="Cross ARM GNU Print Size" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.printsize">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format.476784008" name="Size format" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format"/>
-							</tool>
-						</toolChain>
-					</folderInfo>
-					<sourceEntries>
-						<entry excluding="tests|gtest/src/gtest_main.cc|gtest/src/gtest-all.cc|gmock/src/gmock-all.cc" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-					</sourceEntries>
-				</configuration>
-			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
-		</cconfiguration>
-		<cconfiguration id="ilg.gnuarmeclipse.managedbuild.cross.config.lib.debug.1233362523">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="ilg.gnuarmeclipse.managedbuild.cross.config.lib.debug.1233362523" moduleId="org.eclipse.cdt.core.settings" name="Debug">
-				<externalSettings>
-					<externalSetting>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/portable-testing-googletest"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/portable-testing-googletest/Debug"/>
-						<entry flags="RESOLVED" kind="libraryFile" name="portable-testing-googletest" srcPrefixMapping="" srcRootPath=""/>
-					</externalSetting>
-				</externalSettings>
-				<extensions>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
-				</extensions>
-			</storageModule>
-			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="a" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="${cross_rm} -rf" description="" id="ilg.gnuarmeclipse.managedbuild.cross.config.lib.debug.1233362523" name="Debug" parent="ilg.gnuarmeclipse.managedbuild.cross.config.lib.debug">
-					<folderInfo id="ilg.gnuarmeclipse.managedbuild.cross.config.lib.debug.1233362523." name="/" resourcePath="">
-						<toolChain id="ilg.gnuarmeclipse.managedbuild.cross.toolchain.lib.debug.457595775" name="Cross ARM GCC" superClass="ilg.gnuarmeclipse.managedbuild.cross.toolchain.lib.debug">
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level.1860783801" name="Optimization Level" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level" value="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level.none" valueType="enumerated"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.messagelength.1430397129" name="Message length (-fmessage-length=0)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.messagelength" value="true" valueType="boolean"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.signedchar.514672994" name="'char' is signed (-fsigned-char)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.signedchar" value="true" valueType="boolean"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.functionsections.82018686" name="Function sections (-ffunction-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.functionsections" value="true" valueType="boolean"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.datasections.1428416248" name="Data sections (-fdata-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.datasections" value="true" valueType="boolean"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.allwarn.1062825881" name="Enable all common warnings (-Wall)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.allwarn" value="true" valueType="boolean"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level.282752217" name="Debug level" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level" value="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level.max" valueType="enumerated"/>
-							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.format.216290240" name="Debug format" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.format"/>
-							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="ilg.gnuarmeclipse.managedbuild.cross.targetPlatform.1805571280" isAbstract="false" osList="all" superClass="ilg.gnuarmeclipse.managedbuild.cross.targetPlatform"/>
-							<builder buildPath="${workspace_loc:/portable-testing-googletest}/Debug" id="ilg.gnuarmeclipse.managedbuild.cross.builder.960463192" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" superClass="ilg.gnuarmeclipse.managedbuild.cross.builder"/>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.423454370" name="Cross ARM GNU Assembler" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.usepreprocessor.1433695864" name="Use preprocessor" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.usepreprocessor" value="true" valueType="boolean"/>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.include.paths.1139878960" name="Include paths (-I)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../include"/>
-									<listOptionValue builtIn="false" value="../gtest/"/>
-								</option>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.defs.1581101702" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.defs" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="GTEST_LANG_CXX11=1"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_POSIX_RE=0"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_PTHREAD=0"/>
-								</option>
-								<inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.input.1859237456" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.input"/>
-							</tool>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.304880172" name="Cross ARM C Compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths.2057845852" name="Include paths (-I)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="../include"/>
-									<listOptionValue builtIn="false" value="../gtest/"/>
-								</option>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs.2028926833" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs" useByScannerDiscovery="false" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="GTEST_LANG_CXX11=1"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_POSIX_RE=0"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_PTHREAD=0"/>
-								</option>
-								<inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input.211131862" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input"/>
-							</tool>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler.1194133133" name="Cross ARM C++ Compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.include.paths.576344217" name="Include paths (-I)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="../include"/>
-									<listOptionValue builtIn="false" value="../gtest/"/>
-								</option>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.defs.111117619" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.defs" useByScannerDiscovery="false" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="GTEST_LANG_CXX11=1"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_POSIX_RE=0"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_PTHREAD=0"/>
-								</option>
-								<inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler.input.1540194418" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler.input"/>
-							</tool>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker.1851690373" name="Cross ARM C Linker" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.gcsections.525682104" name="Remove unused sections (-Xlinker --gc-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.gcsections" value="true" valueType="boolean"/>
-							</tool>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.linker.1584139227" name="Cross ARM C++ Linker" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.linker">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.gcsections.986204462" name="Remove unused sections (-Xlinker --gc-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.gcsections" value="true" valueType="boolean"/>
-							</tool>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.archiver.629471277" name="Cross ARM GNU Archiver" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.archiver"/>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.createflash.1458168466" name="Cross ARM GNU Create Flash Image" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.createflash"/>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.createlisting.1092219356" name="Cross ARM GNU Create Listing" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.createlisting">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.source.642933371" name="Display source (--source|-S)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.source" value="true" valueType="boolean"/>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.allheaders.1286484479" name="Display all headers (--all-headers|-x)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.allheaders" value="true" valueType="boolean"/>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.demangle.1564604250" name="Demangle names (--demangle|-C)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.demangle" value="true" valueType="boolean"/>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.linenumbers.2146586553" name="Display line numbers (--line-numbers|-l)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.linenumbers" value="true" valueType="boolean"/>
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.wide.1758470616" name="Wide lines (--wide|-w)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.wide" value="true" valueType="boolean"/>
-							</tool>
-							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.printsize.1763144631" name="Cross ARM GNU Print Size" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.printsize">
-								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format.2063706884" name="Size format" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format"/>
-							</tool>
-						</toolChain>
-					</folderInfo>
-					<sourceEntries>
-						<entry excluding="tests|gtest/src/gtest-all.cc|gtest/src/gtest_main.cc|gmock/src/gmock-all.cc" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-					</sourceEntries>
-				</configuration>
-			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
-		</cconfiguration>
-		<cconfiguration id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327" moduleId="org.eclipse.cdt.core.settings" name="Debug_lib_osx_clang_64">
-				<externalSettings>
-					<externalSetting>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/portable-testing-googletest"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/portable-testing-googletest/Debug_lib_osx_clang_64"/>
-						<entry flags="RESOLVED" kind="libraryFile" name="portable-testing-googletest" srcPrefixMapping="" srcRootPath=""/>
-					</externalSetting>
-				</externalSettings>
-				<extensions>
-					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.MachO64" point="org.eclipse.cdt.core.BinaryParser"/>
-				</extensions>
-			</storageModule>
-			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="a" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327" name="Debug_lib_osx_clang_64" parent="cdt.managedbuild.config.llvm.clang.macosx.exe.debug" prebuildStep="clang --version">
-					<folderInfo id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327." name="/" resourcePath="">
-						<toolChain id="cdt.managedbuild.toolchain.llvm.clang.macosx.exe.debug.1641055516" name="LLVM with Clang (MacOSX)" superClass="cdt.managedbuild.toolchain.llvm.clang.macosx.exe.debug">
-							<targetPlatform archList="all" id="cdt.managedbuild.target.llvm.clang.macosx.platform.exe.debug.1247213072" name="Debug Platform" osList="macosx" superClass="cdt.managedbuild.target.llvm.clang.macosx.platform.exe.debug"/>
-							<builder buildPath="${workspace_loc:/portable-testing-googletest}/Debug_lib_osx_clang_64" id="cdt.managedbuild.target.llvm.clang.macosx.builder.exe.debug.561139278" keepEnvironmentInBuildfile="false" name="CDT Internal Builder" superClass="cdt.managedbuild.target.llvm.clang.macosx.builder.exe.debug"/>
-							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.exe.debug.166119663" name="LLVM assembler" superClass="cdt.managedbuild.tool.llvm.clang.macosx.assembler.exe.debug"/>
-							<tool command="llvm-ar" id="cdt.managedbuild.tool.llvm.archiver.base.911255892" name="LLVM archiver" superClass="cdt.managedbuild.tool.llvm.archiver.base"/>
-							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.debug.631339897" name="LLVM Clang" superClass="cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.debug">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.322290468" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.none" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.466693914" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.max" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.include.paths.239088747" name="Include paths (-I)" superClass="llvm.c_cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../include"/>
-									<listOptionValue builtIn="false" value="../gtest"/>
-								</option>
-								<option id="llvm.c_cpp.compiler.option.misc.other.212278947" name="Other flags" superClass="llvm.c_cpp.compiler.option.misc.other" value="-c -fmessage-length=0 -m64" valueType="string"/>
-								<option id="llvm.c_cpp.compiler.option.preprocessor.def.1871124817" name="Defined symbols (-D)" superClass="llvm.c_cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="GTEST_LANG_CXX11=1"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_POSIX_RE=0"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_PTHREAD=0"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.llvm.c.compiler.input.356914970" superClass="cdt.managedbuild.tool.llvm.c.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.exe.debug.1256430365" name="LLVM Clang++" superClass="cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.exe.debug">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.1923482659" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.none" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.250242876" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.max" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.include.paths.861001311" name="Include paths (-I)" superClass="llvm.c_cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../include"/>
-									<listOptionValue builtIn="false" value="../gtest"/>
-								</option>
-								<option id="llvm.c_cpp.compiler.option.misc.other.468642723" name="Other flags" superClass="llvm.c_cpp.compiler.option.misc.other" value="-c -fmessage-length=0 -m64" valueType="string"/>
-								<option id="llvm.c_cpp.compiler.option.preprocessor.def.1735875277" name="Defined symbols (-D)" superClass="llvm.c_cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="GTEST_LANG_CXX11=1"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_POSIX_RE=0"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_PTHREAD=0"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.llvm.cpp.compiler.input.106596469" superClass="cdt.managedbuild.tool.llvm.cpp.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.c.linker.exe.debug.1454806810" name="LLVM Clang C linker" superClass="cdt.managedbuild.tool.llvm.clang.macosx.c.linker.exe.debug">
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.2111025416" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.linker.exe.debug.752340614" name="LLVM Clang C++ linker" superClass="cdt.managedbuild.tool.llvm.clang.macosx.cpp.linker.exe.debug">
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.1150458458" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-								<inputType id="cdt.managedbuild.tool.llvm.c.linker.input.1930932083" superClass="cdt.managedbuild.tool.llvm.c.linker.input">
-									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
-									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
-								</inputType>
-							</tool>
-						</toolChain>
-					</folderInfo>
-					<sourceEntries>
-						<entry excluding="src/gmock-all.cc" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="gmock"/>
-						<entry excluding="src/gtest-all.cc|src/gtest_main.cc" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="gtest"/>
-					</sourceEntries>
-				</configuration>
-			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
-		</cconfiguration>
-		<cconfiguration id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021" moduleId="org.eclipse.cdt.core.settings" name="Debug_lib_osx_clang_32">
-				<externalSettings>
-					<externalSetting>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/portable-testing-googletest"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/portable-testing-googletest/Debug_lib_osx_clang_32"/>
-						<entry flags="RESOLVED" kind="libraryFile" name="portable-testing-googletest" srcPrefixMapping="" srcRootPath=""/>
-					</externalSetting>
-				</externalSettings>
-				<extensions>
-					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.MachO64" point="org.eclipse.cdt.core.BinaryParser"/>
-				</extensions>
-			</storageModule>
-			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="a" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021" name="Debug_lib_osx_clang_32" parent="cdt.managedbuild.config.llvm.clang.macosx.exe.debug">
-					<folderInfo id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021." name="/" resourcePath="">
-						<toolChain id="cdt.managedbuild.toolchain.llvm.clang.macosx.exe.debug.942579290" name="LLVM with Clang (MacOSX)" superClass="cdt.managedbuild.toolchain.llvm.clang.macosx.exe.debug">
-							<targetPlatform archList="all" id="cdt.managedbuild.target.llvm.clang.macosx.platform.exe.debug.177564696" name="Debug Platform" osList="macosx" superClass="cdt.managedbuild.target.llvm.clang.macosx.platform.exe.debug"/>
-							<builder buildPath="${workspace_loc:/portable-testing-googletest}/Debug_lib_osx_clang_64" id="cdt.managedbuild.target.llvm.clang.macosx.builder.exe.debug.1894378145" keepEnvironmentInBuildfile="false" name="CDT Internal Builder" superClass="cdt.managedbuild.target.llvm.clang.macosx.builder.exe.debug"/>
-							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.exe.debug.923306014" name="LLVM assembler" superClass="cdt.managedbuild.tool.llvm.clang.macosx.assembler.exe.debug"/>
-							<tool command="ar" id="cdt.managedbuild.tool.llvm.archiver.base.1783903192" name="LLVM archiver" superClass="cdt.managedbuild.tool.llvm.archiver.base">
-								<option id="llvm.both.lib.option.flags.1683913015" name="Archiver flags" superClass="llvm.both.lib.option.flags" value="r" valueType="string"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.debug.1289173949" name="LLVM Clang" superClass="cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.debug">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.1247305374" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.none" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.1509101536" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.max" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.include.paths.233297201" name="Include paths (-I)" superClass="llvm.c_cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../include"/>
-									<listOptionValue builtIn="false" value="../gtest"/>
-								</option>
-								<option id="llvm.c_cpp.compiler.option.misc.other.985559267" name="Other flags" superClass="llvm.c_cpp.compiler.option.misc.other" value="-c -fmessage-length=0 -m32" valueType="string"/>
-								<option id="llvm.c_cpp.compiler.option.preprocessor.def.521280649" name="Defined symbols (-D)" superClass="llvm.c_cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="GTEST_LANG_CXX11=1"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_POSIX_RE=0"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_PTHREAD=0"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.llvm.c.compiler.input.1345167357" superClass="cdt.managedbuild.tool.llvm.c.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.exe.debug.35077894" name="LLVM Clang++" superClass="cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.exe.debug">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.2080966317" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.none" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.229404631" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.max" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.include.paths.1604070310" name="Include paths (-I)" superClass="llvm.c_cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="../include"/>
-									<listOptionValue builtIn="false" value="../gtest"/>
-								</option>
-								<option id="llvm.c_cpp.compiler.option.misc.other.33734311" name="Other flags" superClass="llvm.c_cpp.compiler.option.misc.other" value="-c -fmessage-length=0 -m32" valueType="string"/>
-								<option id="llvm.c_cpp.compiler.option.preprocessor.def.1258258734" name="Defined symbols (-D)" superClass="llvm.c_cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="GTEST_LANG_CXX11=1"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_POSIX_RE=0"/>
-									<listOptionValue builtIn="false" value="GTEST_HAS_PTHREAD=0"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.llvm.cpp.compiler.input.2092439456" superClass="cdt.managedbuild.tool.llvm.cpp.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.c.linker.exe.debug.200463327" name="LLVM Clang C linker" superClass="cdt.managedbuild.tool.llvm.clang.macosx.c.linker.exe.debug">
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.1157879985" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.linker.exe.debug.101267934" name="LLVM Clang C++ linker" superClass="cdt.managedbuild.tool.llvm.clang.macosx.cpp.linker.exe.debug">
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.1863473965" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-								<inputType id="cdt.managedbuild.tool.llvm.c.linker.input.777396291" superClass="cdt.managedbuild.tool.llvm.c.linker.input">
-									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
-									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
-								</inputType>
-							</tool>
-						</toolChain>
-					</folderInfo>
-					<sourceEntries>
-						<entry excluding="src/gmock-all.cc" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="gmock"/>
-						<entry excluding="src/gtest-all.cc|src/gtest_main.cc" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="gtest"/>
-					</sourceEntries>
-				</configuration>
-			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
-		</cconfiguration>
 		<cconfiguration id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.206440124.441780412.550320644">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.206440124.441780412.550320644" moduleId="org.eclipse.cdt.core.settings" name="armv7em_soft">
 				<externalSettings>
@@ -451,6 +98,7 @@
 									<listOptionValue builtIn="false" value="GTEST_LANG_CXX11=1"/>
 									<listOptionValue builtIn="false" value="GTEST_HAS_POSIX_RE=0"/>
 									<listOptionValue builtIn="false" value="GTEST_HAS_PTHREAD=0"/>
+									<listOptionValue builtIn="false" value="GTEST_HAS_TR1_TUPLE=0"/>
 								</option>
 								<inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.input.112242345" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.input"/>
 							</tool>
@@ -463,6 +111,7 @@
 									<listOptionValue builtIn="false" value="GTEST_LANG_CXX11=1"/>
 									<listOptionValue builtIn="false" value="GTEST_HAS_POSIX_RE=0"/>
 									<listOptionValue builtIn="false" value="GTEST_HAS_PTHREAD=0"/>
+									<listOptionValue builtIn="false" value="GTEST_HAS_TR1_TUPLE=0"/>
 								</option>
 								<inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input.1331912616" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input"/>
 							</tool>
@@ -476,6 +125,7 @@
 									<listOptionValue builtIn="false" value="GTEST_LANG_CXX11=1"/>
 									<listOptionValue builtIn="false" value="GTEST_HAS_POSIX_RE=0"/>
 									<listOptionValue builtIn="false" value="GTEST_HAS_PTHREAD=0"/>
+									<listOptionValue builtIn="false" value="GTEST_HAS_TR1_TUPLE=0"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.noexceptions.2098111249" name="Do not use exceptions (-fno-exceptions)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.noexceptions" value="true" valueType="boolean"/>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.nortti.2037713082" name="Do not use RTTI (-fno-rtti)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.compiler.nortti" value="true" valueType="boolean"/>
@@ -498,6 +148,142 @@
 							</tool>
 							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.printsize.2027259645" name="Cross ARM GNU Print Size" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.printsize">
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format.1570589604" name="Size format" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="src/gmock-all.cc" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="gmock"/>
+						<entry excluding="src/gtest-all.cc|src/gtest_main.cc" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="gtest"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021.1420032867">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021.1420032867" moduleId="org.eclipse.cdt.core.settings" name="osx_clang_32">
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/portable-testing-googletest"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/portable-testing-googletest/osx_clang_32"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="portable-testing-googletest" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MachO64" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="a" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021.1420032867" name="osx_clang_32" parent="cdt.managedbuild.config.llvm.clang.macosx.exe.debug">
+					<folderInfo id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021.1420032867." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.llvm.clang.macosx.exe.debug.1702822511" name="LLVM with Clang (MacOSX)" superClass="cdt.managedbuild.toolchain.llvm.clang.macosx.exe.debug">
+							<targetPlatform archList="all" id="cdt.managedbuild.target.llvm.clang.macosx.platform.exe.debug.1320190228" name="Debug Platform" osList="macosx" superClass="cdt.managedbuild.target.llvm.clang.macosx.platform.exe.debug"/>
+							<builder buildPath="${workspace_loc:/portable-testing-googletest}/Debug_lib_osx_clang_64" id="cdt.managedbuild.target.llvm.clang.macosx.builder.exe.debug.1426727227" keepEnvironmentInBuildfile="false" name="CDT Internal Builder" superClass="cdt.managedbuild.target.llvm.clang.macosx.builder.exe.debug"/>
+							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.exe.debug.1896709418" name="LLVM assembler" superClass="cdt.managedbuild.tool.llvm.clang.macosx.assembler.exe.debug"/>
+							<tool command="ar" id="cdt.managedbuild.tool.llvm.archiver.base.1483273294" name="LLVM archiver" superClass="cdt.managedbuild.tool.llvm.archiver.base">
+								<option id="llvm.both.lib.option.flags.1835833472" name="Archiver flags" superClass="llvm.both.lib.option.flags" value="r" valueType="string"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.debug.1790666667" name="LLVM Clang" superClass="cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.debug">
+								<option id="llvm.c_cpp.compiler.option.optimization.level.208438681" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="llvm.c_cpp.compiler.option.debugging.level.419233598" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="llvm.c_cpp.compiler.option.include.paths.694243366" name="Include paths (-I)" superClass="llvm.c_cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="../include"/>
+									<listOptionValue builtIn="false" value="../gtest"/>
+								</option>
+								<option id="llvm.c_cpp.compiler.option.misc.other.1845383348" name="Other flags" superClass="llvm.c_cpp.compiler.option.misc.other" value="-c -fmessage-length=0 -m32" valueType="string"/>
+								<option id="llvm.c_cpp.compiler.option.preprocessor.def.720211461" name="Defined symbols (-D)" superClass="llvm.c_cpp.compiler.option.preprocessor.def" valueType="definedSymbols"/>
+								<option id="llvm.c_cpp.compiler.option.optimization.flags.1150280993" name="Other optimization flags" superClass="llvm.c_cpp.compiler.option.optimization.flags" value="-emit-llvm -std=c11" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.llvm.c.compiler.input.1706620604" superClass="cdt.managedbuild.tool.llvm.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.exe.debug.965087396" name="LLVM Clang++" superClass="cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.exe.debug">
+								<option id="llvm.c_cpp.compiler.option.optimization.level.1598950425" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="llvm.c_cpp.compiler.option.debugging.level.661280124" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="llvm.c_cpp.compiler.option.include.paths.749083159" name="Include paths (-I)" superClass="llvm.c_cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="../include"/>
+									<listOptionValue builtIn="false" value="../gtest"/>
+								</option>
+								<option id="llvm.c_cpp.compiler.option.misc.other.1615558883" name="Other flags" superClass="llvm.c_cpp.compiler.option.misc.other" value="-c -fmessage-length=0 -m32" valueType="string"/>
+								<option id="llvm.c_cpp.compiler.option.preprocessor.def.1860398292" name="Defined symbols (-D)" superClass="llvm.c_cpp.compiler.option.preprocessor.def" valueType="definedSymbols"/>
+								<option id="llvm.c_cpp.compiler.option.optimization.flags.1159866394" name="Other optimization flags" superClass="llvm.c_cpp.compiler.option.optimization.flags" value="-emit-llvm -std=c++11" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.llvm.cpp.compiler.input.971205103" superClass="cdt.managedbuild.tool.llvm.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.c.linker.exe.debug.1008686690" name="LLVM Clang C linker" superClass="cdt.managedbuild.tool.llvm.clang.macosx.c.linker.exe.debug">
+								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.1292883573" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.linker.exe.debug.1911994321" name="LLVM Clang C++ linker" superClass="cdt.managedbuild.tool.llvm.clang.macosx.cpp.linker.exe.debug">
+								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.791030997" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.llvm.c.linker.input.918113019" superClass="cdt.managedbuild.tool.llvm.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="src/gmock-all.cc" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="gmock"/>
+						<entry excluding="src/gtest-all.cc|src/gtest_main.cc" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="gtest"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.1347759720">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.1347759720" moduleId="org.eclipse.cdt.core.settings" name="osx_clang_64">
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/portable-testing-googletest"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/portable-testing-googletest/osx_clang_64"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="portable-testing-googletest" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MachO64" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="a" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.1347759720" name="osx_clang_64" parent="cdt.managedbuild.config.llvm.clang.macosx.exe.debug" prebuildStep="clang --version">
+					<folderInfo id="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.1347759720." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.llvm.clang.macosx.exe.debug.1534381213" name="LLVM with Clang (MacOSX)" superClass="cdt.managedbuild.toolchain.llvm.clang.macosx.exe.debug">
+							<targetPlatform archList="all" id="cdt.managedbuild.target.llvm.clang.macosx.platform.exe.debug.661118876" name="Debug Platform" osList="macosx" superClass="cdt.managedbuild.target.llvm.clang.macosx.platform.exe.debug"/>
+							<builder buildPath="${workspace_loc:/portable-testing-googletest}/Debug_lib_osx_clang_64" id="cdt.managedbuild.target.llvm.clang.macosx.builder.exe.debug.195881253" keepEnvironmentInBuildfile="false" name="CDT Internal Builder" superClass="cdt.managedbuild.target.llvm.clang.macosx.builder.exe.debug"/>
+							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.assembler.exe.debug.2045997889" name="LLVM assembler" superClass="cdt.managedbuild.tool.llvm.clang.macosx.assembler.exe.debug"/>
+							<tool command="ar" id="cdt.managedbuild.tool.llvm.archiver.base.1647943815" name="LLVM archiver" superClass="cdt.managedbuild.tool.llvm.archiver.base"/>
+							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.debug.1586029981" name="LLVM Clang" superClass="cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.debug">
+								<option id="llvm.c_cpp.compiler.option.optimization.level.812552233" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="llvm.c_cpp.compiler.option.debugging.level.1224711103" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="llvm.c_cpp.compiler.option.include.paths.15729826" name="Include paths (-I)" superClass="llvm.c_cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="../include"/>
+									<listOptionValue builtIn="false" value="../gtest"/>
+								</option>
+								<option id="llvm.c_cpp.compiler.option.misc.other.603855803" name="Other flags" superClass="llvm.c_cpp.compiler.option.misc.other" value="-c -fmessage-length=0 -m64" valueType="string"/>
+								<option id="llvm.c_cpp.compiler.option.preprocessor.def.1585874180" name="Defined symbols (-D)" superClass="llvm.c_cpp.compiler.option.preprocessor.def" valueType="definedSymbols"/>
+								<option id="llvm.c_cpp.compiler.option.optimization.flags.2067301611" name="Other optimization flags" superClass="llvm.c_cpp.compiler.option.optimization.flags" value="-emit-llvm -std=c11" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.llvm.c.compiler.input.2126076214" superClass="cdt.managedbuild.tool.llvm.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.exe.debug.837231060" name="LLVM Clang++" superClass="cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.exe.debug">
+								<option id="llvm.c_cpp.compiler.option.optimization.level.294670005" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="llvm.c_cpp.compiler.option.debugging.level.179509938" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="llvm.c_cpp.compiler.option.include.paths.789677159" name="Include paths (-I)" superClass="llvm.c_cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="../include"/>
+									<listOptionValue builtIn="false" value="../gtest"/>
+								</option>
+								<option id="llvm.c_cpp.compiler.option.misc.other.836835512" name="Other flags" superClass="llvm.c_cpp.compiler.option.misc.other" value="-c -fmessage-length=0 -m64" valueType="string"/>
+								<option id="llvm.c_cpp.compiler.option.preprocessor.def.1998546832" name="Defined symbols (-D)" superClass="llvm.c_cpp.compiler.option.preprocessor.def" valueType="definedSymbols"/>
+								<option id="llvm.c_cpp.compiler.option.optimization.flags.1544658936" name="Other optimization flags" superClass="llvm.c_cpp.compiler.option.optimization.flags" value="-emit-llvm -std=c++11" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.llvm.cpp.compiler.input.140331923" superClass="cdt.managedbuild.tool.llvm.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.c.linker.exe.debug.1587965105" name="LLVM Clang C linker" superClass="cdt.managedbuild.tool.llvm.clang.macosx.c.linker.exe.debug">
+								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.1167960647" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.llvm.clang.macosx.cpp.linker.exe.debug.321739345" name="LLVM Clang C++ linker" superClass="cdt.managedbuild.tool.llvm.clang.macosx.cpp.linker.exe.debug">
+								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.101391524" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.llvm.c.linker.input.1331407923" superClass="cdt.managedbuild.tool.llvm.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
 							</tool>
 						</toolChain>
 					</folderInfo>
@@ -536,7 +322,16 @@
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021;cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021.;cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.exe.debug.35077894;cdt.managedbuild.tool.llvm.cpp.compiler.input.2092439456">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang++"/>
 		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021.1420032867;cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021.1420032867.;cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.exe.debug.965087396;cdt.managedbuild.tool.llvm.cpp.compiler.input.971205103">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang++"/>
+		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.206440124;cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.206440124.;ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.1558285384;ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input.80237854">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.206440124.441780412.550320644;cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.206440124.441780412.550320644.;ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.482138518;ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input.1331912616">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.206440124.441780412.550320644;cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.206440124.441780412.550320644.;ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler.110308789;ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler.input.24914035">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.206440124;cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.206440124.;cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.debug.646811763;cdt.managedbuild.tool.llvm.c.compiler.input.540152662">
@@ -548,6 +343,9 @@
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.206440124;cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.206440124.;cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.exe.debug.166673946;cdt.managedbuild.tool.llvm.cpp.compiler.input.393027729">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021.1420032867;cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021.1420032867.;cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.debug.1790666667;cdt.managedbuild.tool.llvm.c.compiler.input.1706620604">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang"/>
+		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327;cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.;cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.debug.631339897;cdt.managedbuild.tool.llvm.c.compiler.input.356914970">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang"/>
 		</scannerConfigBuildInfo>
@@ -557,10 +355,13 @@
 		<scannerConfigBuildInfo instanceId="ilg.gnuarmeclipse.managedbuild.cross.config.lib.debug.1641997647;ilg.gnuarmeclipse.managedbuild.cross.config.lib.debug.1641997647.;ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.1924682777;ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input.1947010825">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="ilg.gnuarmeclipse.managedbuild.cross.config.lib.debug.1233362523;ilg.gnuarmeclipse.managedbuild.cross.config.lib.debug.1233362523.;ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler.1194133133;ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler.input.1540194418">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021;cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.881441021.;cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.debug.1289173949;cdt.managedbuild.tool.llvm.c.compiler.input.1345167357">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="ilg.gnuarmeclipse.managedbuild.cross.config.lib.debug.1233362523;ilg.gnuarmeclipse.managedbuild.cross.config.lib.debug.1233362523.;ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler.1194133133;ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler.input.1540194418">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.1347759720;cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.1347759720.;cdt.managedbuild.tool.llvm.clang.macosx.cpp.compiler.exe.debug.837231060;cdt.managedbuild.tool.llvm.cpp.compiler.input.140331923">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="ilg.gnuarmeclipse.managedbuild.cross.config.lib.release.1155193907;ilg.gnuarmeclipse.managedbuild.cross.config.lib.release.1155193907.;ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler.816681936;ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler.input.1378499756">
@@ -570,6 +371,9 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="ilg.gnuarmeclipse.managedbuild.cross.config.lib.debug.1233362523;ilg.gnuarmeclipse.managedbuild.cross.config.lib.debug.1233362523.;ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.304880172;ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input.211131862">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.1347759720;cdt.managedbuild.config.llvm.clang.macosx.exe.debug.1470488327.1347759720.;cdt.managedbuild.tool.llvm.clang.macosx.c.compiler.exe.debug.1586029981;cdt.managedbuild.tool.llvm.c.compiler.input.2126076214">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 	</storageModule>

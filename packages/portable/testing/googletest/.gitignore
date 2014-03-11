@@ -4,3 +4,5 @@
 /Debug F4
 /Debug_armv7em_soft
 /armv7em_soft
+/osx_clang_64
+/osx_clang_32
