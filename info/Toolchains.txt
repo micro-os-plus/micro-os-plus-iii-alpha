@@ -1,0 +1,95 @@
+
+Bare-metal
+----------
+
+GNU Tools for Embedded
+
+-Wall -Wextra -Werror -Wabi
+-fmessage-length=0 -c -ffunction-sections -fdata-sections 
+
+-Wabi -fno-use-cxa-atexit -fno-threadsafe-statics
+
+-g3 / -g
+-Os / -O0
+
+-std=gnu / -std=c++11
+
+===============================================================================
+
+OS X
+----
+
+Apple clang (http://clang.llvm.org)
+
+Executables:
+
+	clang/clang++/ar
+
+C/C++ Build -> Settings
+
+LLVM Clang
+	Dialect: 
+		Language standard: ISO C11 (-std=c11)
+	
+	Optimization:
+		Level: -O3 (-O0 for Debug)
+		Other: -fsigned-char
+
+	Debugging:
+		Level: -g (-g3 is the same)
+
+	Warnings:
+		-Wall
+		-Werror
+
+	Miscellaneous:
+		-c -fmessage-length=0 -emit-llvm
+		-m64 / -m32
+		
+		-Weverything if possible
+ 
+LLVM Clang++
+	Dialect:
+		Language standard: ISO C++11 (-std=c++0x, same as c++11)
+
+	Optimization:
+		Level: -O3 (-O0 for Debug)
+		Other: -fsigned-char
+
+	Debugging:
+		Level: -g (-g3 is the same)
+
+	Warnings:
+		-Wall
+		-Werror
+
+	Miscellaneous:
+		-c -fmessage-length=0 -emit-llvm 
+		-m64 / -m32
+		
+		-Weverything if possible
+
+
+Other possible options:
+
+	-fsigned-char 
+	-fsigned-bitfields 
+			 
+	-Wno-c++98-compat
+	-Wno-c++98-compat-pedantic 
+	-Wno-undef
+	-Wno-documentation-unknown-command
+
+Linker options:
+
+	-native
+
+Pragmas:
+
+// [ILG]
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundef"
+
+// [ILG]
+#pragma clang diagnostic pop
+
