@@ -30,3 +30,21 @@ Exclude from build
 - gtest/src/gtes-all.cc
 - gmock/src/gmock-all.cc
 
+===============================================================================
+
+To build the libraries with OS X clang, generally use the default options:
+
+clang++ -I../include -I../gtest -O3 -emit-llvm -std=c++11 -g3 -Wall -c -fmessage-length=0 -m64
+
+To build the libraries with arm-none-eabi, use
+
+arm-none-eabi-g++ -march=armv7e-m -mthumb -mfloat-abi=soft -Os \
+-fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall \
+-Wextra -g -I../include -I../gtest -std=gnu++11 -fno-exceptions -fno-rtti 
+
+Other considered option, but finally not used, since they break the build:
+-DGTEST_LANG_CXX11=1 
+-DGTEST_HAS_POSIX_RE=0 
+-DGTEST_HAS_PTHREAD=0 
+-DGTEST_HAS_TR1_TUPLE=0
+
