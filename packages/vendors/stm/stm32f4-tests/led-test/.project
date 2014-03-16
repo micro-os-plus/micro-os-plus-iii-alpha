@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>stm32f4-led-test</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>micro-os-plus/include/cmsis</name>
+			<type>2</type>
+			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/architectures/arm/cortexm/include/cmsis</location>
+		</link>
+		<link>
+			<name>micro-os-plus/include/cmsis-device</name>
+			<type>2</type>
+			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/vendors/stm/stm32f4/include/cmsis-device</location>
+		</link>
+		<link>
+			<name>micro-os-plus/include/cortexm</name>
+			<type>2</type>
+			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/architectures/arm/cortexm/include/cortexm</location>
+		</link>
+		<link>
+			<name>micro-os-plus/include/portable</name>
+			<type>2</type>
+			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/portable/peripherals/include/portable</location>
+		</link>
+		<link>
+			<name>micro-os-plus/include/stm32f4</name>
+			<type>2</type>
+			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/vendors/stm/stm32f4/include/stm32f4</location>
+		</link>
+		<link>
+			<name>micro-os-plus/include/stm32f4discovery</name>
+			<type>2</type>
+			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/vendors/stm/stm32f4discovery/include/stm32f4discovery</location>
+		</link>
+		<link>
+			<name>micro-os-plus/src/cortexm</name>
+			<type>2</type>
+			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/architectures/arm/cortexm/src/cortexm</location>
+		</link>
+		<link>
+			<name>micro-os-plus/src/newlib</name>
+			<type>2</type>
+			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/portable/newlib/src/newlib</location>
+		</link>
+		<link>
+			<name>micro-os-plus/src/newlib-cortexm</name>
+			<type>2</type>
+			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/architectures/arm/cortexm/src/newlib-cortexm</location>
+		</link>
+		<link>
+			<name>micro-os-plus/src/stm32f4</name>
+			<type>2</type>
+			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/vendors/stm/stm32f4/src/stm32f4</location>
+		</link>
+	</linkedResources>
+</projectDescription>
