@@ -9,7 +9,7 @@
 #ifndef CORTEXM_MEMORY_MAP_H_
 #define CORTEXM_MEMORY_MAP_H_
 
-#include "cortexm/Typedefs.h"
+#include "cortexm/Types.h"
 
 namespace cortexm
 {

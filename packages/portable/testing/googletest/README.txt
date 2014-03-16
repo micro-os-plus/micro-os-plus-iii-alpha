@@ -34,9 +34,9 @@ Exclude from build
 
 To build the libraries with OS X clang, generally use the default options:
 
-clang++ -I../include -I../gtest -O3 -emit-llvm -std=c++11 -g3 -Wall -c -fmessage-length=0 -m64
+clang++ -I../include -I../gtest -O3 -fsigned-char -emit-llvm -std=c++11 -g3 -Wall -c -fmessage-length=0 -m64
 
-To build the libraries with arm-none-eabi, use
+To build the libraries with arm-none-eabi, use:
 
 arm-none-eabi-g++ -march=armv7e-m -mthumb -mfloat-abi=soft -Os \
 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall \

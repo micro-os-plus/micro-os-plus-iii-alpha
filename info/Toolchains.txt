@@ -14,6 +14,50 @@ GNU Tools for Embedded
 
 -std=gnu / -std=c++11
 
+Target Processor
+	Family: cortex-m4
+	Float ABI: soft
+
+Optimization:
+	Level: -O0 (Debug) / -Os (Release)
+	-fmessage-length=0
+	-fsigned-char
+	-ffunction-sections
+	-fdata-sections
+
+Warnings:
+	-Wall
+	-Wextra
+	-Werror
+
+
+Debugging:
+	Level: -g3 (Debug) / -g (Release)
+
+Cross ARM C Compiler:
+	Optimization
+		Language: -std=gnu11
+
+Cross ARM C++ Compiler:
+	Optimization
+		Language: -std=gnu++11
+		-fno-exceptions
+		-fno-rtti
+		Other: -fno-use-cxa-atexit
+	Warnings:
+		-Wabi
+
+Cross ARM C++ Linker:
+	General:
+		Script files: mem.ld, libs.ld, sections.ld
+		-nostartupfiles
+		-Xlinker --gc-sections
+	Library path:
+		../ldscripts
+
+	Miscellaneous: --specs=nano.specs
+
+
 ===============================================================================
 
 OS X

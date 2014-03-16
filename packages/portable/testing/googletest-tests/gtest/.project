@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>portable-testing-googletest-tests-gtest-all</name>
+	<name>portable-testing-googletest-tests-gtest</name>
 	<comment></comment>
 	<projects>
 		<project>portable-testing-googletest</project>

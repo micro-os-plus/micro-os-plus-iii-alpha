@@ -9,7 +9,7 @@
 #ifndef CORTEXM_BIT_BAND_H_
 #define CORTEXM_BIT_BAND_H_
 
-#include "cortexm/Typedefs.h"
+#include "cortexm/Types.h"
 #include "cortexm/MemoryMap.h"
 
 namespace cortexm
@@ -22,7 +22,9 @@ namespace cortexm
   namespace bitband
   {
 
-    typedef uint32_t bitValue_t;
+    using bitValue_t = uint_fast8_t;
+
+    using bitWord_t = uint32_t;
 
   } // namespace bitband
 
@@ -65,12 +67,12 @@ namespace cortexm
         const registerAddress_t bitWordAddress =
             computePeripheralBitWordAddress(genericAddress, bitNumber);
 
-        volatile registerAddress_t* const bitWordPointer =
-            reinterpret_cast<uint32_t*>(bitWordAddress);
+        volatile bitband::bitWord_t* const bitWordPointer =
+            reinterpret_cast<bitband::bitWord_t*>(bitWordAddress);
 
         // return the entire word, but only the least
         // significant bit is meaningful, all other are 0
-        return *bitWordPointer;
+        return static_cast<bitband::bitValue_t>(*bitWordPointer);
       }
 
     /// \brief Write one peripheral bit.
@@ -87,11 +89,11 @@ namespace cortexm
         const registerAddress_t bitWordAddress =
             computePeripheralBitWordAddress(genericAddress, bitNumber);
 
-        volatile registerAddress_t* const bitWordPointer =
-            reinterpret_cast<uint32_t*>(bitWordAddress);
+        volatile bitband::bitWord_t* const BitWordPointer =
+            reinterpret_cast<bitband::bitWord_t*>(bitWordAddress);
 
         // only the least significant bit is used, all other are ignored
-        *bitWordPointer = value;
+        *BitWordPointer = static_cast<bitband::bitWord_t>(value);
       }
 
     /// \brief Set one peripheral bit to 1.
