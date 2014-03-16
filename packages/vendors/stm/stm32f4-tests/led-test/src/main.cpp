@@ -8,8 +8,43 @@
 
 // ----------------------------------------------------------------------------
 
-gpio::PortId portId;
+void
+myConstLeds();
+
+void
+myAllocatedLeds();
+
+void
+myAllocatedVarLeds();
+
+void
+myVirtualLeds();
+
+void
+myVirtualVarLeds();
+
+gpio::PortId ledsPortId;
 gpio::PortBitId pinIds[4];
+
+int
+main(void)
+{
+  myConstLeds();
+
+  ledsPortId = gpio::PortId::D;
+  pinIds[0] = gpio::PortBitId::_12;
+  pinIds[1] = gpio::PortBitId::_13;
+  pinIds[2] = gpio::PortBitId::_14;
+  pinIds[3] = gpio::PortBitId::_15;
+
+  myAllocatedLeds();
+
+  myAllocatedVarLeds();
+
+  myVirtualLeds();
+
+  myVirtualVarLeds();
+}
 
 void
 myConstLeds()
@@ -43,7 +78,6 @@ myConstLeds()
   led6Blue.toggle();
   led6Blue.isOn();
   led6Blue.powerDown();
-
 }
 
 void
@@ -111,9 +145,7 @@ myAllocatedLeds()
   led6BlueA.toggle();
   led6BlueA.isOn();
   led6BlueA.powerDown();
-
 }
-
 
 void
 myAllocatedVarLeds()
@@ -124,7 +156,7 @@ myAllocatedVarLeds()
   using GpioPort = TAllocatedGpioPort<TAllocatedGpioPortPowerDownPolicy>;
 
   GpioPort portD
-    { portId };
+    { ledsPortId };
 
   // For brevity, the pin definition is aliased.
   using GpioPin = TAllocatedGpioPin<GpioPort>;
@@ -180,7 +212,6 @@ myAllocatedVarLeds()
   led6BlueA.toggle();
   led6BlueA.isOn();
   led6BlueA.powerDown();
-
 }
 
 void
@@ -248,7 +279,6 @@ myVirtualLeds()
   led6BlueA.toggle();
   led6BlueA.isOn();
   led6BlueA.powerDown();
-
 }
 
 void
@@ -260,7 +290,7 @@ myVirtualVarLeds()
   using GpioPort = TAllocatedGpioPort<TAllocatedGpioPortPowerDownPolicy>;
 
   GpioPort portD
-    { portId };
+    { ledsPortId };
 
   // For brevity, the pin definition is aliased.
   using GpioPin = TAllocatedGpioPin<GpioPort>;
@@ -316,26 +346,5 @@ myVirtualVarLeds()
   led6BlueA.toggle();
   led6BlueA.isOn();
   led6BlueA.powerDown();
-
-}
-
-int
-main(void)
-{
-  myConstLeds();
-
-  portId = gpio::PortId::D;
-  pinIds[0] = gpio::PortBitId::_12;
-  pinIds[1] = gpio::PortBitId::_13;
-  pinIds[2] = gpio::PortBitId::_14;
-  pinIds[3] = gpio::PortBitId::_15;
-
-  myAllocatedLeds();
-
-  myAllocatedVarLeds();
-
-  myVirtualLeds();
-
-  myVirtualVarLeds();
 }
 

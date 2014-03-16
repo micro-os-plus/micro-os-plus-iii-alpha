@@ -6,7 +6,11 @@
 #ifndef STM32F4_GPIO_PIN_H_
 #define STM32F4_GPIO_PIN_H_
 
+// ----------------------------------------------------------------------------
+
 #include "stm32f4/gpio.h"
+
+// ----------------------------------------------------------------------------
 
 namespace stm32f4
 {
@@ -171,10 +175,11 @@ namespace stm32f4
       using bitNumber_t = typename TGpioPinImplementation<GpioPort_T>::bitNumber_t;
       using bitMask_t = typename GpioPort_T::bitsMask_t;
 
-      TAllocatedGpioPin(GpioPort& port, gpio::PortBitId bitId) :
-          port(port), //
+      TAllocatedGpioPin(GpioPort& port_, gpio::PortBitId bitId) :
+          port(port_), //
           bitNumber(static_cast<bitNumber_t>(bitId)), //
-          bitMask(1u << (static_cast<bitNumber_t>(bitId)))
+          bitMask(
+              static_cast<bitMask_t>(1u << (static_cast<bitNumber_t>(bitId))))
       {
       }
 
@@ -446,5 +451,7 @@ namespace stm32f4
 
 // ----------------------------------------------------------------------------
 }//namespace stm32f4
+
+// ----------------------------------------------------------------------------
 
 #endif // STM32F4_GPIO_PIN_H_

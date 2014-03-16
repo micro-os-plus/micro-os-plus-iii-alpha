@@ -79,6 +79,9 @@ _write_trace_semihosting_debug(char* ptr, int len);
 // The preprocessor definitions used for selection are in trace_impl.h.
 
 int
+_write(int fd, char* ptr, int len);
+
+int
 _write(int fd __attribute__((unused)), char* ptr __attribute__((unused)),
     int len __attribute__((unused)))
 {
@@ -112,7 +115,7 @@ _write(int fd __attribute__((unused)), char* ptr __attribute__((unused)),
 #define ITM_STIMULUS_PORT     (0)
 
 int
-_write_trace_itm (char* ptr, int len)
+_write_trace_itm(char* ptr, int len)
 {
   for (int i = 0; i < len; i++)
     {
@@ -127,7 +130,7 @@ _write_trace_itm (char* ptr, int len)
       while (ITM->PORT[ITM_STIMULUS_PORT].u32 == 0)
         ;
       // then send data, one byte at a time
-      ITM->PORT[ITM_STIMULUS_PORT].u8 = *ptr++;
+      ITM->PORT[ITM_STIMULUS_PORT].u8 = (uint8_t)(*ptr++);
     }
 
   return len; // all characters successfully sent
@@ -151,43 +154,43 @@ _write_trace_itm (char* ptr, int len)
 
 int
 _write_trace_semihosting_stdout (char* ptr, int len)
-{
-  static int handle;
-  void* block[3];
-  int ret;
+  {
+    static int handle;
+    void* block[3];
+    int ret;
 
-  if (handle == 0)
-    {
-      // On the first call get the file handle from the host
-      block[0] = ":tt"; // special filename to be used for stdin/out/err
-      block[1] = (void*) 4; // mode "w"
-      // length of ":tt", except null terminator
-      block[2] = (void*) sizeof(":tt") - 1;
+    if (handle == 0)
+      {
+        // On the first call get the file handle from the host
+        block[0] = ":tt";// special filename to be used for stdin/out/err
+        block[1] = (void*) 4;// mode "w"
+        // length of ":tt", except null terminator
+        block[2] = (void*) sizeof(":tt") - 1;
 
-      ret = call_host (SEMIHOSTING_SYS_OPEN, (void*) block);
-      if (ret == -1)
+        ret = call_host (SEMIHOSTING_SYS_OPEN, (void*) block);
+        if (ret == -1)
         return -1;
 
-      handle = ret;
-    }
+        handle = ret;
+      }
 
-  block[0] = (void*) handle;
-  block[1] = ptr;
-  block[2] = (void*) len;
-  // send character array to host file/device
-  ret = call_host (SEMIHOSTING_SYS_WRITE, (void*) block);
-  // this call returns the number of bytes NOT written (0 if all ok)
+    block[0] = (void*) handle;
+    block[1] = ptr;
+    block[2] = (void*) len;
+    // send character array to host file/device
+    ret = call_host (SEMIHOSTING_SYS_WRITE, (void*) block);
+    // this call returns the number of bytes NOT written (0 if all ok)
 
-  // -1 is not a legal value, but SEGGER seems to return it
-  if (ret == -1)
+    // -1 is not a legal value, but SEGGER seems to return it
+    if (ret == -1)
     return -1;
 
-  // The compliant way of returning errors
-  if (ret == len)
+    // The compliant way of returning errors
+    if (ret == len)
     return -1;
 
-  return len - ret;
-}
+    return len - ret;
+  }
 
 #endif // INCLUDE_TRACE_SEMIHOSTING_STDOUT
 
@@ -199,36 +202,36 @@ _write_trace_semihosting_stdout (char* ptr, int len)
 
 int
 _write_trace_semihosting_debug (char* ptr, int len)
-{
-  // Since the single character debug channel is quite slow, try to
-  // optimise and send a null terminated string, if possible.
-  if (ptr[len] == '\0')
-    {
-      // send string
-      call_host (SEMIHOSTING_SYS_WRITE0, (void*) ptr);
-    }
-  else
-    {
-      // If not, use a local buffer to speed things up
-      char tmp[TRACE_SEMIHOSTING_DEBUG_TMP_ARRAY_SIZE];
-      unsigned int togo = len;
-      while (togo > 0)
-        {
-          unsigned int n = ((togo < sizeof(tmp)) ? togo : sizeof(tmp));
-          unsigned int i = 0;
-          for (; i < n; ++i, ++ptr)
-            {
-              tmp[i] = *ptr;
-            }
-          tmp[i] = '\0';
+  {
+    // Since the single character debug channel is quite slow, try to
+    // optimise and send a null terminated string, if possible.
+    if (ptr[len] == '\0')
+      {
+        // send string
+        call_host (SEMIHOSTING_SYS_WRITE0, (void*) ptr);
+      }
+    else
+      {
+        // If not, use a local buffer to speed things up
+        char tmp[TRACE_SEMIHOSTING_DEBUG_TMP_ARRAY_SIZE];
+        unsigned int togo = len;
+        while (togo > 0)
+          {
+            unsigned int n = ((togo < sizeof(tmp)) ? togo : sizeof(tmp));
+            unsigned int i = 0;
+            for (; i < n; ++i, ++ptr)
+              {
+                tmp[i] = *ptr;
+              }
+            tmp[i] = '\0';
 
-          call_host (SEMIHOSTING_SYS_WRITE0, (void*) tmp);
+            call_host (SEMIHOSTING_SYS_WRITE0, (void*) tmp);
 
-          togo -= n;
-        }
-    }
-  return len;
-}
+            togo -= n;
+          }
+      }
+    return len;
+  }
 
 #endif // INCLUDE_TRACE_SEMIHOSTING_DEBUG
 

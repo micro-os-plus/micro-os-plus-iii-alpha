@@ -25,6 +25,9 @@ char** environ = __env;
 #include <sys/times.h>
 #include <limits.h>
 
+void
+__initialise_args(int* p_argc, char*** p_argv);
+
 // This is the standard default implementation for the routine to
 // process args. It returns a single empty arg.
 // For semihosting applications, this is redefined to get the real
@@ -56,6 +59,70 @@ __initialise_args(int* p_argc, char*** p_argv)
 // ----------------------------------------------------------------------------
 
 #if !defined(USE_SEMIHOSTING)
+
+// Forward declarations
+
+int
+_chown(const char* path, uid_t owner, gid_t group);
+
+int
+_close(int fildes);
+
+int
+_execve(char* name, char** argv, char** env);
+
+int
+_fork(void);
+
+int
+_fstat(int fildes, struct stat* st);
+
+int
+_getpid(void);
+
+int
+_gettimeofday(struct timeval* ptimeval, void* ptimezone);
+
+int
+_isatty(int file);
+
+int
+_kill(int pid, int sig);
+
+int
+_link(char* existing, char* _new);
+
+int
+_lseek(int file, int ptr, int dir);
+
+int
+_open(char* file, int flags, int mode);
+
+int
+_read(int file, char* ptr, int len);
+
+int
+_readlink(const char* path, char* buf, size_t bufsize);
+
+int
+_stat(const char* file, struct stat* st);
+
+int
+_symlink(const char* path1, const char* path2);
+
+clock_t
+_times(struct tms* buf);
+
+int
+_unlink(char* name);
+
+int
+_wait(int* status);
+
+int
+_write(int file, char* ptr, int len);
+
+// Definitions
 
 int __attribute__((weak))
 _chown(const char* path __attribute__((unused)),
@@ -125,7 +192,8 @@ _kill(int pid __attribute__((unused)), int sig __attribute__((unused)))
 }
 
 int __attribute__((weak))
-_link(char* existing __attribute__((unused)), char* _new __attribute__((unused)))
+_link(char* existing __attribute__((unused)),
+    char* _new __attribute__((unused)))
 {
   errno = ENOSYS;
   return -1;
@@ -183,7 +251,7 @@ clock_t __attribute__((weak))
 _times(struct tms* buf __attribute__((unused)))
 {
   errno = ENOSYS;
-  return -1;
+  return ((clock_t) -1);
 }
 
 int __attribute__((weak))
@@ -1026,22 +1094,22 @@ _rename (const char* oldpath, const char* newpath)
 
 int
 mkdir(const char *path, mode_t mode)
-{
+  {
 #if 0
-  // always return true
-  return 0;
+    // always return true
+    return 0;
 #else
-  errno = ENOSYS;
-  return -1;
+    errno = ENOSYS;
+    return -1;
 #endif
-}
+  }
 
 char *
 getcwd(char *buf, size_t size)
-{
-  // no cwd available via semihosting, so we use the temporary folder
-  strncpy(buf, "/tmp", size);
-  return buf;
-}
+  {
+    // no cwd available via semihosting, so we use the temporary folder
+    strncpy(buf, "/tmp", size);
+    return buf;
+  }
 
 #endif

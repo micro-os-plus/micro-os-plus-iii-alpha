@@ -42,6 +42,10 @@
 #ifndef __CORE_CM4_H_GENERIC
 #define __CORE_CM4_H_GENERIC
 
+// [ILG]
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -1786,5 +1790,8 @@ __STATIC_INLINE int32_t ITM_CheckChar (void) {
 #ifdef __cplusplus
 }
 #endif
+
+// [ILG]
+#pragma GCC diagnostic pop
 
 #endif /* __CMSIS_GENERIC */

@@ -3,6 +3,12 @@
 // Copyright (c) 2014 Liviu Ionescu.
 //
 
+// ----------------------------------------------------------------------------
+
+#include "cortexm/vectors.h"
+
+// ----------------------------------------------------------------------------
+
 extern void
 __attribute__((noreturn))
 _start(void);
@@ -57,28 +63,28 @@ HardFault_Handler(void)
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
 
 void __attribute__ ((section(".after_vectors"),weak))
-MemManage_Handler (void)
-  {
-    while (1)
-      {
-      }
-  }
+MemManage_Handler(void)
+{
+  while (1)
+    {
+    }
+}
 
 void __attribute__ ((section(".after_vectors"),weak))
-BusFault_Handler (void)
-  {
-    while (1)
-      {
-      }
-  }
+BusFault_Handler(void)
+{
+  while (1)
+    {
+    }
+}
 
 void __attribute__ ((section(".after_vectors"),weak))
-UsageFault_Handler (void)
-  {
-    while (1)
-      {
-      }
-  }
+UsageFault_Handler(void)
+{
+  while (1)
+    {
+    }
+}
 
 #endif
 
@@ -93,12 +99,12 @@ SVC_Handler(void)
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
 
 void __attribute__ ((section(".after_vectors"),weak))
-DebugMon_Handler (void)
-  {
-    while (1)
-      {
-      }
-  }
+DebugMon_Handler(void)
+{
+  while (1)
+    {
+    }
+}
 
 #endif
 

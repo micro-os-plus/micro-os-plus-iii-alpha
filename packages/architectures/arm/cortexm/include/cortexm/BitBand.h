@@ -9,8 +9,12 @@
 #ifndef CORTEXM_BIT_BAND_H_
 #define CORTEXM_BIT_BAND_H_
 
+// ----------------------------------------------------------------------------
+
 #include "cortexm/Types.h"
 #include "cortexm/MemoryMap.h"
+
+// ----------------------------------------------------------------------------
 
 namespace cortexm
 {
@@ -28,7 +32,7 @@ namespace cortexm
 
   } // namespace bitband
 
-  // ========================================================================
+  // --------------------------------------------------------------------------
 
   // \headerfile BitBand.h "hal/architecture/arm/cortexm/peripheral/include/BitBand.h"
   /// \ingroup arm_cm
@@ -159,8 +163,10 @@ namespace cortexm
     /// @} end of name Private member functions
   };
 
-// ==========================================================================
+// ----------------------------------------------------------------------------
 
 }// namespace cortexm
+
+// ----------------------------------------------------------------------------
 
 #endif // CORTEXM_BIT_BAND_H_

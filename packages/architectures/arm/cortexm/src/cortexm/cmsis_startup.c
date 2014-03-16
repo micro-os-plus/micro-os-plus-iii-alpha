@@ -3,6 +3,8 @@
 // Copyright (c) 2014 Liviu Ionescu.
 //
 
+// ----------------------------------------------------------------------------
+
 // This module contains the startup code for a portable Cortex-M
 // C/C++ application, built with CMSIS and newlib.
 //
@@ -27,8 +29,9 @@
 // For this to be called, the project linker must be configured without
 // the startup sequence (-nostartfiles).
 
-#include <sys/types.h>
+// ----------------------------------------------------------------------------
 
+#include <sys/types.h>
 #include "cmsis_device.h"
 
 // ----------------------------------------------------------------------------
@@ -63,6 +66,26 @@ main(int argc, char* argv[]);
 extern void
 __attribute__((noreturn))
 _exit(int);
+
+// ----------------------------------------------------------------------------
+
+// Forward declarations
+
+void
+_start(void);
+
+void
+__initialise_data(unsigned int* from, unsigned int* section_begin,
+    unsigned int* section_end);
+
+void
+__initialise_bss(unsigned int* section_begin, unsigned int* section_end);
+
+void
+__run_init_array(void);
+
+void
+__run_fini_array(void);
 
 // ----------------------------------------------------------------------------
 
@@ -108,8 +131,8 @@ inline void
 __attribute__((always_inline))
 __run_init_array(void)
 {
-  size_t count;
-  size_t i;
+  int count;
+  int i;
 
   count = __preinit_array_end - __preinit_array_start;
   for (i = 0; i < count; i++)
@@ -130,8 +153,8 @@ inline void
 __attribute__((always_inline))
 __run_fini_array(void)
 {
-  size_t count;
-  size_t i;
+  int count;
+  int i;
 
   count = __fini_array_end - __fini_array_start;
   for (i = count; i > 0; i--)
@@ -192,3 +215,5 @@ _start(void)
   // On test platforms, like semihosting, inform the host on the test result.
   _exit(code);
 }
+
+// ----------------------------------------------------------------------------

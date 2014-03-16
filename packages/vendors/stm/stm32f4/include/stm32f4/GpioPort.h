@@ -6,14 +6,17 @@
 #ifndef STM32F4_GPIO_PORT_H_
 #define STM32F4_GPIO_PORT_H_
 
+// ----------------------------------------------------------------------------
+
 #include "stm32f4xx.h"
 #include "stm32f4/gpio.h"
 
 #include "stm32f4/GpioPowerPolicy.h"
 
+// ----------------------------------------------------------------------------
+
 namespace stm32f4
 {
-
   // --------------------------------------------------------------------------
 
   class GpioPortImplementation
@@ -131,14 +134,14 @@ namespace stm32f4
     __attribute__((always_inline))
     readInput(GPIO_TypeDef* address)
     {
-      return address->IDR;
+      return static_cast<value_t>(address->IDR);
     }
 
     inline static value_t
     __attribute__((always_inline))
     readOutput(GPIO_TypeDef* address)
     {
-      return address->ODR;
+      return static_cast<value_t>(address->ODR);
     }
 
     inline static void
@@ -493,5 +496,7 @@ namespace stm32f4
 // ----------------------------------------------------------------------------
 
 }//namespace stm32f4
+
+// ----------------------------------------------------------------------------
 
 #endif // STM32F4_GPIO_PORT_H_

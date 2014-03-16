@@ -6,8 +6,12 @@
 #ifndef STM32F4_GPIO_POWER_POLICY_H_
 #define STM32F4_GPIO_POWER_POLICY_H_
 
+// ----------------------------------------------------------------------------
+
 #include "stm32f4/gpio.h"
 #include "stm32f4/Rcc.h"
+
+// ----------------------------------------------------------------------------
 
 // The port power policies are used as base class for ports.
 // Not to be used directly.
@@ -125,6 +129,8 @@ namespace stm32f4
 // ----------------------------------------------------------------------------
 
 }// namespace stm32f4
+
+// ----------------------------------------------------------------------------
 
 #endif // STM32F4_GPIO_POWER_POLICY_H_
 

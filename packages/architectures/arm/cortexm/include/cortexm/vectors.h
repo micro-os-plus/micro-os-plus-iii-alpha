@@ -10,7 +10,7 @@
 
 #if defined(__cplusplus__)
 extern "C"
-{
+  {
 #endif
 
 // External references to cortexm_handlers.c
@@ -24,11 +24,11 @@ HardFault_Handler(void);
 
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
 extern void
-MemManage_Handler (void);
+MemManage_Handler(void);
 extern void
-BusFault_Handler (void);
+BusFault_Handler(void);
 extern void
-UsageFault_Handler (void);
+UsageFault_Handler(void);
 #endif
 
 extern void
@@ -36,7 +36,7 @@ SVC_Handler(void);
 
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
 extern void
-DebugMon_Handler (void);
+DebugMon_Handler(void);
 #endif
 
 extern void

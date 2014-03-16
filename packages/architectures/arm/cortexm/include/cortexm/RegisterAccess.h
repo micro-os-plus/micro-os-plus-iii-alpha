@@ -6,8 +6,12 @@
 #ifndef CORTEXM_REGISTERACCESS_H_
 #define CORTEXM_REGISTERACCESS_H_
 
+// ----------------------------------------------------------------------------
+
 namespace cortexm
 {
+  using index_t = uint_fast8_t;
+
   template<typename Value_T, const registerAddress_t OFFSET_T>
     class TReadWrite
     {
@@ -155,5 +159,7 @@ namespace cortexm
     };
 
 } // namespace cortexm
+
+// ----------------------------------------------------------------------------
 
 #endif /* REGISTERACCESS_H_ */

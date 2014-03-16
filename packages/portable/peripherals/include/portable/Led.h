@@ -123,8 +123,8 @@ template< //
 
   public:
 
-    TVirtualLed(GpioPin& gpioPin) :
-        gpioPin(gpioPin)
+    TVirtualLed(GpioPin& gpioPin_) :
+        gpioPin(gpioPin_)
     {
     }
 
@@ -190,18 +190,18 @@ template< //
 
   public:
 
-    TAllocatedLed(GpioPin& gpioPin) :
-        gpioPin(gpioPin)
+    TAllocatedLed(GpioPin& gpioPin_) :
+        gpioPin(gpioPin_)
     {
     }
 
-    inline void
+    void
     powerUp(void) const
     {
       Implementation::powerUp(&this->gpioPin);
     }
 
-    inline void
+    void
     powerDown(void) const
     {
       Implementation::powerDown(&this->gpioPin);

@@ -7,6 +7,13 @@
 
 #include "cmsis_device.h"
 
+// ----------------------------------------------------------------------------
+
+void
+_exit(int code);
+
+// ----------------------------------------------------------------------------
+
 // Usually main() doesn't return, but if it does, we use the NVIC to restart.
 // On Debug we just enter an infinite loop, to be used as landmark when halting
 // the debugger.
