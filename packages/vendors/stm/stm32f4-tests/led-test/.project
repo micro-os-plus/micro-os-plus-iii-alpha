@@ -26,6 +26,11 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>micro-os-plus/include/arm</name>
+			<type>2</type>
+			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/architectures/arm/include/arm</location>
+		</link>
+		<link>
 			<name>micro-os-plus/include/cmsis</name>
 			<type>2</type>
 			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/architectures/arm/cortexm/include/cmsis</location>
