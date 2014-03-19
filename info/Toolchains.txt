@@ -19,7 +19,7 @@ Target Processor
 	Float ABI: soft
 
 Optimization:
-	Level: -O0 (Debug) / -Os (Release)
+	Level: -Og (Debug) / -Os (Release)
 	-fmessage-length=0
 	-fsigned-char
 	-ffunction-sections
@@ -43,7 +43,7 @@ Cross ARM C++ Compiler:
 		Language: -std=gnu++11
 		-fno-exceptions
 		-fno-rtti
-		Other: -fno-use-cxa-atexit
+		Other: -fno-use-cxa-atexit -fno-threadsafe-statics -fabi-version=6
 	Warnings:
 		-Wabi
 
@@ -76,7 +76,7 @@ LLVM Clang
 		Language standard: ISO C11 (-std=c11)
 	
 	Optimization:
-		Level: -O3 (-O0 for Debug)
+		Level: -O0 (Debug) / -O3 (Release)
 		Other: -fsigned-char
 
 	Debugging:
@@ -136,4 +136,11 @@ Pragmas:
 
 // [ILG]
 #pragma clang diagnostic pop
+
+// [ILG]
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+
+// [ILG]
+#pragma GCC diagnostic pop
 
