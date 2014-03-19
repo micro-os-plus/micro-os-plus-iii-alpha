@@ -154,6 +154,9 @@ namespace stm32f4
 
   // --------------------------------------------------------------------------
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+
   template< //
       template<typename > class PowerPolicy_T = TAllocatedGpioPortPowerDownPolicy //
   >
@@ -312,7 +315,11 @@ namespace stm32f4
       // Allocated members
       GPIO_TypeDef* const address;
       portNumber_t const portNumber;
+
     };
+
+#pragma GCC diagnostic pop
+
 
   // --------------------------------------------------------------------------
 

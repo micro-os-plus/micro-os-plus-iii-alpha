@@ -164,6 +164,9 @@ namespace stm32f4
 
   // --------------------------------------------------------------------------
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+
   template<typename GpioPort_T>
     class TAllocatedGpioPin : public TGpioPinImplementation<GpioPort_T>
     {
@@ -304,6 +307,8 @@ namespace stm32f4
       bitNumber_t const bitNumber;
       bitMask_t const bitMask;
     };
+
+#pragma GCC diagnostic pop
 
   // --------------------------------------------------------------------------
 
