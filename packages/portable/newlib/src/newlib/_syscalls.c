@@ -14,6 +14,8 @@ char* __env[1] =
 char** environ = __env;
 #endif
 
+#if !defined(USE_SEMIHOSTING)
+
 // ----------------------------------------------------------------------------
 
 #include <_ansi.h>
@@ -26,7 +28,7 @@ char** environ = __env;
 #include <limits.h>
 
 void
-__initialise_args(int* p_argc, char*** p_argv);
+__initialize_args(int* p_argc, char*** p_argv);
 
 // This is the standard default implementation for the routine to
 // process args. It returns a single empty arg.
@@ -35,7 +37,7 @@ __initialise_args(int* p_argc, char*** p_argv);
 // some args in a non-volatile memory.
 
 void __attribute__((weak))
-__initialise_args(int* p_argc, char*** p_argv)
+__initialize_args(int* p_argc, char*** p_argv)
 {
   // By the time we reach this, the data and bss should have been initialised.
 
@@ -58,7 +60,6 @@ __initialise_args(int* p_argc, char*** p_argv)
 
 // ----------------------------------------------------------------------------
 
-#if !defined(USE_SEMIHOSTING)
 
 // Forward declarations
 
@@ -295,14 +296,14 @@ _write(int file __attribute__((unused)), char* ptr __attribute__((unused)),
 #include <time.h>
 #include <sys/time.h>
 #include <sys/times.h>
-//#include <errno.h>
+#include <errno.h>
 #include <reent.h>
 #include <unistd.h>
 #include <sys/wait.h>
 #include <ctype.h>
 #include <signal.h>
 
-#include "semihosting.h"
+#include "arm/semihosting.h"
 
 int
 __attribute__((noreturn))
@@ -312,7 +313,7 @@ void
 __attribute__((noreturn))
 _exit (int status);
 
-#if 0
+#if 1
 /* Forward prototypes.  */
 int
 _system (const char*);
@@ -331,7 +332,7 @@ _link (void);
 #endif
 int
 _stat (const char*, struct stat*);
-#if 0
+#if 1
 int
 _fstat (int, struct stat*);
 int
@@ -364,6 +365,9 @@ _swiread (int, char*, int);
 void
 initialise_monitor_handles (void);
 
+void
+__initialize_args (int* p_argc, char*** p_argv);
+
 static int
 checkerror (int);
 static int
@@ -383,7 +387,7 @@ typedef struct
   }CommandLineBlock;
 
 void
-__initialise_args (int* p_argc, char*** p_argv)
+__initialize_args (int* p_argc, char*** p_argv)
   {
 
     // Array of chars to receive the command line from the host
@@ -411,7 +415,7 @@ __initialise_args (int* p_argc, char*** p_argv)
         // The command line is a null terminated string
         char* p = cmdBlock.pCommandLine;
 
-        char delim = '\0';
+        int delim = '\0';
         int ch;
 
         while ((ch = *p) != '\0')
@@ -801,7 +805,7 @@ int
 _swiopen (const char* path, int flags)
   {
     int aflags = 0, fh;
-    int block[3];
+    uint32_t block[3];
 
     int fd = newslot ();
 
@@ -845,9 +849,9 @@ _swiopen (const char* path, int flags)
         aflags |= 8;
       }
 
-    block[0] = (int) path;
+    block[0] = (uint32_t) path;
     block[2] = strlen (path);
-    block[1] = aflags;
+    block[1] = (uint32_t) aflags;
 
     fh = call_host (SEMIHOSTING_SYS_OPEN, block);
 
@@ -971,8 +975,8 @@ int
 _unlink (const char* path)
   {
     int res;
-    int block[2];
-    block[0] = (int) path;
+    uint32_t block[2];
+    block[0] = (uint32_t) path;
     block[1] = strlen (path);
     res = call_host (SEMIHOSTING_SYS_REMOVE, block);
 
@@ -1008,7 +1012,7 @@ _clock (void)
   {
     clock_t timeval;
 
-    timeval = call_host (SEMIHOSTING_SYS_CLOCK, NULL);
+    timeval = (clock_t)call_host (SEMIHOSTING_SYS_CLOCK, NULL);
     return timeval;
   }
 
@@ -1054,7 +1058,7 @@ _isatty (int fd)
 int
 _system (const char* s)
   {
-    int block[2];
+    uint32_t block[2];
     int e;
 
     /* Hmmm.  The ARM debug interface specification doesn't say whether
@@ -1062,7 +1066,7 @@ _system (const char* s)
      meaning to its return value.  Try to do something reasonable....  */
     if (!s)
     return 1; /* maybe there is a shell available? we can hope. :-P */
-    block[0] = (int) s;
+    block[0] = (uint32_t) s;
     block[1] = strlen (s);
     e = checkerror (call_host (SEMIHOSTING_SYS_SYSTEM, block));
     if ((e >= 0) && (e < 256))
@@ -1081,10 +1085,10 @@ _system (const char* s)
 int
 _rename (const char* oldpath, const char* newpath)
   {
-    int block[4];
-    block[0] = (int) oldpath;
+    uint32_t block[4];
+    block[0] = (uint32_t) oldpath;
     block[1] = strlen (oldpath);
-    block[2] = (int) newpath;
+    block[2] = (uint32_t) newpath;
     block[3] = strlen (newpath);
     return checkerror (call_host (SEMIHOSTING_SYS_RENAME, block)) ? -1 : 0;
   }
@@ -1093,7 +1097,7 @@ _rename (const char* oldpath, const char* newpath)
 // Required by Google Tests
 
 int
-mkdir(const char *path, mode_t mode)
+mkdir(const char *path __attribute__((unused)), mode_t mode __attribute__((unused)))
   {
 #if 0
     // always return true

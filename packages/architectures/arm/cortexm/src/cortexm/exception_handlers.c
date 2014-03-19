@@ -5,7 +5,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include "cortexm/vectors.h"
+#include "cortexm/ExceptionHandlers.h"
 
 // ----------------------------------------------------------------------------
 
@@ -64,27 +64,27 @@ HardFault_Handler(void)
 
 void __attribute__ ((section(".after_vectors"),weak))
 MemManage_Handler(void)
-{
-  while (1)
-    {
-    }
-}
+  {
+    while (1)
+      {
+      }
+  }
 
 void __attribute__ ((section(".after_vectors"),weak))
 BusFault_Handler(void)
-{
-  while (1)
-    {
-    }
-}
+  {
+    while (1)
+      {
+      }
+  }
 
 void __attribute__ ((section(".after_vectors"),weak))
 UsageFault_Handler(void)
-{
-  while (1)
-    {
-    }
-}
+  {
+    while (1)
+      {
+      }
+  }
 
 #endif
 

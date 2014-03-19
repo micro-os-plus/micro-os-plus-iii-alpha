@@ -9,31 +9,29 @@
 
 // ----------------------------------------------------------------------------
 
-void
-_exit(int code);
+extern void
+__attribute__((noreturn))
+NVIC_SystemReset(void);
 
 // ----------------------------------------------------------------------------
 
-// Usually main() doesn't return, but if it does, we use the NVIC to restart.
-// On Debug we just enter an infinite loop, to be used as landmark when halting
-// the debugger.
-//
-// It can be redefined in the application, if more functionality
-// is required.
+// Forward declarations
 
 void
-__attribute__((weak))
-_exit(int code __attribute__((unused)))
-{
-#if !defined(DEBUG)
-  // TODO: write on trace
-  NVIC_SystemReset();
-#endif
+__reset_hardware(void);
 
-  // TODO: write on trace
-  while (1)
-    ;
+// ----------------------------------------------------------------------------
+
+// This is the default hardware reset routine; it can be
+// redefined in the application for more complex applications.
+//
+// Called from _exit().
+
+void
+__attribute__((weak,noreturn))
+__reset_hardware()
+{
+  NVIC_SystemReset();
 }
 
 // ----------------------------------------------------------------------------
-

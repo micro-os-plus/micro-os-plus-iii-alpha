@@ -3,8 +3,8 @@
 // Copyright (c) 2014 Liviu Ionescu.
 //
 
-#ifndef CORTEXM_VECTORS_H_
-#define CORTEXM_VECTORS_H_
+#ifndef CORTEXM_EXCEPTION_HANDLERS_H_
+#define CORTEXM_EXCEPTION_HANDLERS_H_
 
 // ----------------------------------------------------------------------------
 
@@ -50,4 +50,4 @@ SysTick_Handler(void);
 
 // ----------------------------------------------------------------------------
 
-#endif // CORTEXM_VECTORS_H_
+#endif // CORTEXM_EXCEPTION_HANDLERS_H_
