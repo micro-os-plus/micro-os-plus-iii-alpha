@@ -2,11 +2,11 @@
 <launchConfiguration type="org.eclipse.cdt.launch.applicationLaunchType">
 <intAttribute key="org.eclipse.cdt.launch.ATTR_BUILD_BEFORE_LAUNCH_ATTR" value="2"/>
 <stringAttribute key="org.eclipse.cdt.launch.COREFILE_PATH" value=""/>
-<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_ARGUMENTS" value="--gtest_output=xml:osx-32.xml"/>
-<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug_osx_clang_32/portable-testing-googletest-tests-gtest-all"/>
-<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="portable-testing-googletest-tests-gtest-all"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_ARGUMENTS" value="--gtest_output=xml:osx-64.xml"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug_osx_clang_64/3rd-party_googletest-tests_gtest"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="3rd-party_googletest-tests_gtest"/>
 <booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="false"/>
-<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.149768058.734645625"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="cdt.managedbuild.config.llvm.clang.macosx.exe.debug.149768058"/>
 <booleanAttribute key="org.eclipse.cdt.launch.use_terminal" value="true"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/portable-testing-googletest-tests-gtest-all"/>
