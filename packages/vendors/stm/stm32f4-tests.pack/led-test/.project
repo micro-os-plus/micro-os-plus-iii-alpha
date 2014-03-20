@@ -38,7 +38,7 @@
 		<link>
 			<name>micro-os-plus/include/cmsis-device</name>
 			<type>2</type>
-			<locationURI>MICRO_OS_PLUS_III_LOC/packages/vendors/stm/stm32f4.pack/include/cmsis-device</locationURI>
+			<locationURI>MICRO_OS_PLUS_III_LOC/packages/vendors/stm/stm32f4.pack/include/cmsis</locationURI>
 		</link>
 		<link>
 			<name>micro-os-plus/include/cortexm</name>
@@ -73,7 +73,7 @@
 		<link>
 			<name>micro-os-plus/src/newlib-cortexm</name>
 			<type>2</type>
-			<locationURI>MICRO_OS_PLUS_III_LOC/packages/architectures/arm/cortexm.pack/src/newlib-cortexm</locationURI>
+			<locationURI>MICRO_OS_PLUS_III_LOC/packages/architectures/arm/cortexm.pack/src/newlib</locationURI>
 		</link>
 		<link>
 			<name>micro-os-plus/src/stm32f4</name>

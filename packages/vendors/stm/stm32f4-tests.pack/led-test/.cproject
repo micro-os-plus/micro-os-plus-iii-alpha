@@ -69,7 +69,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/stm32f4-led-test/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4discovery.pack/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include/cmsis-device}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include/cmsis}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/cortexm.pack/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/cortexm.pack/include/cmsis}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/arm.pack/include}&quot;"/>
@@ -87,7 +87,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/stm32f4-led-test/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4discovery.pack/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include/cmsis-device}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include/cmsis}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/cortexm.pack/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/cortexm.pack/include/cmsis}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/arm.pack/include}&quot;"/>
@@ -110,7 +110,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/stm32f4-led-test/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4discovery.pack/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include/cmsis-device}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include/cmsis}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/cortexm.pack/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/cortexm.pack/include/cmsis}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/arm.pack/include}&quot;"/>
@@ -306,7 +306,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/stm32f4-led-test/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4discovery.pack/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include/cmsis-device}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include/cmsis}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/cortexm.pack/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/cortexm.pack/include/cmsis}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/arm.pack/include}&quot;"/>
@@ -323,7 +323,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/stm32f4-led-test/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4discovery.pack/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include/cmsis-device}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include/cmsis}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/cortexm.pack/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/cortexm.pack/include/cmsis}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/arm.pack/include}&quot;"/>
@@ -345,7 +345,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/stm32f4-led-test/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4discovery.pack/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include/cmsis-device}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/vendors/stm/stm32f4.pack/include/cmsis}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/cortexm.pack/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/cortexm.pack/include/cmsis}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/micro-os-plus-iii.git/packages/architectures/arm/arm.pack/include}&quot;"/>
