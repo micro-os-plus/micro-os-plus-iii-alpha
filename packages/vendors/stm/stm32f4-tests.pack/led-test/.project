@@ -28,57 +28,57 @@
 		<link>
 			<name>micro-os-plus/include/arm</name>
 			<type>2</type>
-			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/architectures/arm/include/arm</location>
+			<locationURI>MICRO_OS_PLUS_III_LOC/packages/architectures/arm/arm.pack/include/arm</locationURI>
 		</link>
 		<link>
 			<name>micro-os-plus/include/cmsis</name>
 			<type>2</type>
-			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/architectures/arm/cortexm/include/cmsis</location>
+			<locationURI>MICRO_OS_PLUS_III_LOC/packages/architectures/arm/cortexm.pack/include/cmsis</locationURI>
 		</link>
 		<link>
 			<name>micro-os-plus/include/cmsis-device</name>
 			<type>2</type>
-			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/vendors/stm/stm32f4/include/cmsis-device</location>
+			<locationURI>MICRO_OS_PLUS_III_LOC/packages/vendors/stm/stm32f4.pack/include/cmsis-device</locationURI>
 		</link>
 		<link>
 			<name>micro-os-plus/include/cortexm</name>
 			<type>2</type>
-			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/architectures/arm/cortexm/include/cortexm</location>
+			<locationURI>MICRO_OS_PLUS_III_LOC/packages/architectures/arm/cortexm.pack/include/cortexm</locationURI>
 		</link>
 		<link>
 			<name>micro-os-plus/include/portable</name>
 			<type>2</type>
-			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/portable/peripherals/include/portable</location>
+			<locationURI>MICRO_OS_PLUS_III_LOC/packages/portable/peripherals.pack/include/portable</locationURI>
 		</link>
 		<link>
 			<name>micro-os-plus/include/stm32f4</name>
 			<type>2</type>
-			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/vendors/stm/stm32f4/include/stm32f4</location>
+			<locationURI>MICRO_OS_PLUS_III_LOC/packages/vendors/stm/stm32f4.pack/include/stm32f4</locationURI>
 		</link>
 		<link>
 			<name>micro-os-plus/include/stm32f4discovery</name>
 			<type>2</type>
-			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/vendors/stm/stm32f4discovery/include/stm32f4discovery</location>
+			<locationURI>MICRO_OS_PLUS_III_LOC/packages/vendors/stm/stm32f4discovery.pack/include/stm32f4discovery</locationURI>
 		</link>
 		<link>
 			<name>micro-os-plus/src/cortexm</name>
 			<type>2</type>
-			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/architectures/arm/cortexm/src/cortexm</location>
+			<locationURI>MICRO_OS_PLUS_III_LOC/packages/architectures/arm/cortexm.pack/src/cortexm</locationURI>
 		</link>
 		<link>
 			<name>micro-os-plus/src/newlib</name>
 			<type>2</type>
-			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/portable/newlib/src/newlib</location>
+			<locationURI>MICRO_OS_PLUS_III_LOC/packages/portable/newlib.pack/src/newlib</locationURI>
 		</link>
 		<link>
 			<name>micro-os-plus/src/newlib-cortexm</name>
 			<type>2</type>
-			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/architectures/arm/cortexm/src/newlib-cortexm</location>
+			<locationURI>MICRO_OS_PLUS_III_LOC/packages/architectures/arm/cortexm.pack/src/newlib-cortexm</locationURI>
 		</link>
 		<link>
 			<name>micro-os-plus/src/stm32f4</name>
 			<type>2</type>
-			<location>/Users/ilg/My Files/MacBookPro Projects/uOS/micro-os-plus-iii.git/packages/vendors/stm/stm32f4/src/stm32f4</location>
+			<locationURI>MICRO_OS_PLUS_III_LOC/packages/vendors/stm/stm32f4.pack/src/stm32f4</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
