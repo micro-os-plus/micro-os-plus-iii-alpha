@@ -3,7 +3,7 @@
 // Copyright (c) 2014 Liviu Ionescu.
 //
 
-#if !defined(USE_SEMIHOSTING)
+#if !defined(OS_USE_SEMIHOSTING)
 
 // ----------------------------------------------------------------------------
 
@@ -12,7 +12,7 @@
 // ----------------------------------------------------------------------------
 
 extern int
-_trace_write(char* ptr, int len);
+trace_write(char* ptr, int len);
 
 // ----------------------------------------------------------------------------
 
@@ -37,7 +37,7 @@ _write(int fd __attribute__((unused)), char* ptr __attribute__((unused)),
   if (fd == 1 || fd == 2)
     {
 
-      return _trace_write (ptr, len);
+      return trace_write (ptr, len);
 
     }
 #endif // DEBUG
@@ -48,4 +48,4 @@ _write(int fd __attribute__((unused)), char* ptr __attribute__((unused)),
 
 // ----------------------------------------------------------------------------
 
-#endif // !defined(USE_SEMIHOSTING)
+#endif // !defined(OS_USE_SEMIHOSTING)

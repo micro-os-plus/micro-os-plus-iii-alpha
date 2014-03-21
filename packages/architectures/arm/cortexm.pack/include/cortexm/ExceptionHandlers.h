@@ -8,7 +8,7 @@
 
 // ----------------------------------------------------------------------------
 
-#if defined(__cplusplus__)
+#if defined(__cplusplus)
 extern "C"
   {
 #endif
@@ -44,7 +44,7 @@ PendSV_Handler(void);
 extern void
 SysTick_Handler(void);
 
-#if defined(__cplusplus__)
+#if defined(__cplusplus)
 }
 #endif
 

@@ -15,37 +15,37 @@
 
 // Cortex M3/M4 definitions
 
-//#define USE_TRACE_ITM
-//#define USE_TRACE_SEMIHOSTING_DEBUG
-//#define USE_TRACE_SEMIHOSTING_STDOUT
+//#define OS_USE_TRACE_ITM
+//#define OS_USE_TRACE_SEMIHOSTING_DEBUG
+//#define OS_USE_TRACE_SEMIHOSTING_STDOUT
 
 #elif defined(__ARM_ARCH_6M__)
 
 // Cortex M0/M0+ definitions
 
-#if defined(USE_TRACE_ITM)
-#undef USE_TRACE_ITM
+#if defined(OS_USE_TRACE_ITM)
+#undef OS_USE_TRACE_ITM
 #endif
 
-//#define USE_TRACE_SEMIHOSTING_DEBUG
-//#define USE_TRACE_SEMIHOSTING_STDOUT
+//#define OS_USE_TRACE_SEMIHOSTING_DEBUG
+//#define OS_USE_TRACE_SEMIHOSTING_STDOUT
 
 #endif
 
 // ----------------------------------------------------------------------------
 
 
-#if defined(USE_TRACE_ITM)
+#if defined(OS_USE_TRACE_ITM)
 int
 _trace_write_itm(char* ptr, int len);
 #endif
 
-#if defined(USE_TRACE_SEMIHOSTING_STDOUT)
+#if defined(OS_USE_TRACE_SEMIHOSTING_STDOUT)
 int
 _trace_write_semihosting_stdout(char* ptr, int len);
 #endif
 
-#if defined(USE_TRACE_SEMIHOSTING_DEBUG)
+#if defined(OS_USE_TRACE_SEMIHOSTING_DEBUG)
 int
 _trace_write_semihosting_debug(char* ptr, int len);
 #endif
@@ -62,11 +62,11 @@ int
 trace_write(char* ptr __attribute__((unused)),
     int len __attribute__((unused)))
 {
-#if defined(USE_TRACE_ITM)
+#if defined(OS_USE_TRACE_ITM)
       return _trace_write_itm (ptr, len);
-#elif defined(USE_TRACE_SEMIHOSTING_STDOUT)
+#elif defined(OS_USE_TRACE_SEMIHOSTING_STDOUT)
       return _trace_write_semihosting_stdout(ptr, len);
-#elif defined(USE_TRACE_SEMIHOSTING_DEBUG)
+#elif defined(OS_USE_TRACE_SEMIHOSTING_DEBUG)
       return _trace_write_semihosting_debug(ptr, len);
 #endif
 
@@ -75,7 +75,7 @@ trace_write(char* ptr __attribute__((unused)),
 
 // ----------------------------------------------------------------------------
 
-#if defined(USE_TRACE_ITM)
+#if defined(OS_USE_TRACE_ITM)
 
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
 
@@ -88,8 +88,8 @@ trace_write(char* ptr __attribute__((unused)),
 // so this configuration will not work on OpenOCD (will not crash, but
 // nothing will be displayed in the output console).
 
-#if !defined(ITM_STIMULUS_PORT)
-#define ITM_STIMULUS_PORT     (0)
+#if !defined(OS_INTEGER_TRACE_ITM_STIMULUS_PORT)
+#define OS_INTEGER_TRACE_ITM_STIMULUS_PORT     (0)
 #endif
 
 int
@@ -99,16 +99,16 @@ _trace_write_itm(char* ptr, int len)
     {
       // Check if ITM or the stimulus port are not enabled
       if (((ITM->TCR & ITM_TCR_ITMENA_Msk) == 0)
-          || ((ITM->TER & (1UL << ITM_STIMULUS_PORT)) == 0))
+          || ((ITM->TER & (1UL << OS_INTEGER_TRACE_ITM_STIMULUS_PORT)) == 0))
         {
           return i; // return the number of sent characters (may be 0)
         }
 
       // Wait until STIMx is ready...
-      while (ITM->PORT[ITM_STIMULUS_PORT].u32 == 0)
+      while (ITM->PORT[OS_INTEGER_TRACE_ITM_STIMULUS_PORT].u32 == 0)
         ;
       // then send data, one byte at a time
-      ITM->PORT[ITM_STIMULUS_PORT].u8 = (uint8_t)(*ptr++);
+      ITM->PORT[OS_INTEGER_TRACE_ITM_STIMULUS_PORT].u8 = (uint8_t)(*ptr++);
     }
 
   return len; // all characters successfully sent
@@ -116,11 +116,11 @@ _trace_write_itm(char* ptr, int len)
 
 #endif // defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
 
-#endif // USE_TRACE_ITM
+#endif // OS_USE_TRACE_ITM
 
 // ----------------------------------------------------------------------------
 
-#if defined(USE_TRACE_SEMIHOSTING_DEBUG) || defined(USE_TRACE_SEMIHOSTING_STDOUT)
+#if defined(OS_USE_TRACE_SEMIHOSTING_DEBUG) || defined(OS_USE_TRACE_SEMIHOSTING_STDOUT)
 
 #include "arm/semihosting.h"
 
@@ -146,11 +146,11 @@ _trace_write_itm(char* ptr, int len)
 // BKPT to communicate with the host. Attempts to run them standalone or
 // without semihosting enabled will usually be terminated with hardware faults.
 
-#endif // INCLUDE_TRACE_SEMIHOSTING_*
+#endif // OS_USE_TRACE_SEMIHOSTING_DEBUG_*
 
 // ----------------------------------------------------------------------------
 
-#if defined(USE_TRACE_SEMIHOSTING_STDOUT)
+#if defined(OS_USE_TRACE_SEMIHOSTING_STDOUT)
 
 int
 _trace_write_semihosting_stdout(char* ptr, int len)
@@ -192,13 +192,13 @@ _trace_write_semihosting_stdout(char* ptr, int len)
     return len - ret;
   }
 
-#endif // USE_TRACE_SEMIHOSTING_STDOUT
+#endif // OS_USE_TRACE_SEMIHOSTING_STDOUT
 
 // ----------------------------------------------------------------------------
 
-#if defined(USE_TRACE_SEMIHOSTING_DEBUG)
+#if defined(OS_USE_TRACE_SEMIHOSTING_DEBUG)
 
-#define TRACE_SEMIHOSTING_DEBUG_TMP_ARRAY_SIZE  (16)
+#define OS_INTEGER_TRACE_TMP_ARRAY_SIZE  (16)
 
 int
 _trace_write_semihosting_debug(char* ptr, int len)
@@ -213,8 +213,8 @@ _trace_write_semihosting_debug(char* ptr, int len)
     else
       {
         // If not, use a local buffer to speed things up
-        char tmp[TRACE_SEMIHOSTING_DEBUG_TMP_ARRAY_SIZE];
-        unsigned int togo = len;
+        char tmp[OS_INTEGER_TRACE_TMP_ARRAY_SIZE];
+        unsigned int togo = (unsigned int)len;
         while (togo > 0)
           {
             unsigned int n = ((togo < sizeof(tmp)) ? togo : sizeof(tmp));
@@ -233,7 +233,7 @@ _trace_write_semihosting_debug(char* ptr, int len)
     return len;
   }
 
-#endif // USE_TRACE_SEMIHOSTING_DEBUG
+#endif // OS_USE_TRACE_SEMIHOSTING_DEBUG
 
 // ----------------------------------------------------------------------------
 

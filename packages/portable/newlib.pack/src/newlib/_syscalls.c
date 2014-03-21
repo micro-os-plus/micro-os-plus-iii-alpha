@@ -1,5 +1,5 @@
 //
-// This file is part of the GNU ARM Eclipse Plug-ins project.
+// This file is part of the µOS++ III distribution.
 // Parts of this file are from the newlib sources, issued under GPL.
 // Copyright (c) 2014 Liviu Ionescu
 //
@@ -14,7 +14,7 @@ char* __env[1] =
 char** environ = __env;
 #endif
 
-#if !defined(USE_SEMIHOSTING)
+#if !defined(OS_USE_SEMIHOSTING)
 
 // ----------------------------------------------------------------------------
 
