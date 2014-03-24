@@ -310,6 +310,12 @@ void HAL_PWR_DisablePVD(void)
   *(__IO uint32_t *) CR_PVDE_BB = (uint32_t)DISABLE;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief Enables the WakeUp PINx functionality.
   * @param WakeUpPinx: Specifies the Power Wake-Up pin to enable
@@ -337,7 +343,7 @@ void HAL_PWR_DisableWakeUpPin(uint32_t WakeUpPinx)
   assert_param(IS_PWR_WAKEUP_PIN(WakeUpPinx));  
   *(__IO uint32_t *) CSR_EWUP_BB = (uint32_t)DISABLE;
 }
-  
+
 /**
   * @brief Enters Sleep mode.
   *   
@@ -382,6 +388,11 @@ void HAL_PWR_EnterSLEEPMode(uint32_t Regulator, uint8_t SLEEPEntry)
   /* Enable SysTick Timer */
   SysTick->CTRL  |= 0x01;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief Enters Stop mode. 

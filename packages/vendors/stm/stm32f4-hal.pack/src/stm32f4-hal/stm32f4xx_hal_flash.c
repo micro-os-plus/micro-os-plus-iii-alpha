@@ -384,6 +384,12 @@ void HAL_FLASH_IRQHandler(void)
   
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  FLASH end of operation interrupt callback
   * @param  ReturnValue: The value saved in this parameter depends on the ongoing procedure
@@ -414,6 +420,11 @@ __weak void HAL_FLASH_OperationErrorCallback(uint32_t ReturnValue)
             the HAL_FLASH_OperationErrorCallback could be implemented in the user file
    */ 
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}

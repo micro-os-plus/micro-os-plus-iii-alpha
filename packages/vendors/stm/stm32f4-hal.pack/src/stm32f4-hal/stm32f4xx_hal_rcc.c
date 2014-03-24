@@ -337,7 +337,7 @@ HAL_StatusTypeDef HAL_RCC_OscConfig(RCC_OscInitTypeDef  *RCC_OscInitStruct)
       }
       
       /* Set the new HSE configuration ---------------------------------------*/
-      __HAL_RCC_HSE_CONFIG(RCC_OscInitStruct->HSEState);
+      __HAL_RCC_HSE_CONFIG((uint8_t)RCC_OscInitStruct->HSEState);
       
       /* Check the HSE State */
       if((RCC_OscInitStruct->HSEState) == RCC_HSE_ON)
@@ -508,7 +508,7 @@ HAL_StatusTypeDef HAL_RCC_OscConfig(RCC_OscInitTypeDef  *RCC_OscInitStruct)
     } 
     
     /* Set the new LSE configuration -----------------------------------------*/
-    __HAL_RCC_LSE_CONFIG(RCC_OscInitStruct->LSEState);
+    __HAL_RCC_LSE_CONFIG((uint8_t)RCC_OscInitStruct->LSEState);
     /* Check the LSE State */
     if((RCC_OscInitStruct->LSEState) == RCC_LSE_ON)
     {
