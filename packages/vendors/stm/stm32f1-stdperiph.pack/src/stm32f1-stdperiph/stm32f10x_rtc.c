@@ -137,6 +137,12 @@ uint32_t RTC_GetCounter(void)
   return (((uint32_t)RTC->CNTH << 16 ) | tmp) ;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Sets the RTC counter value.
   * @param  CounterValue: RTC counter new value.
@@ -184,6 +190,11 @@ void RTC_SetAlarm(uint32_t AlarmValue)
   RTC->ALRL = (AlarmValue & RTC_LSB_MASK);
   RTC_ExitConfigMode();
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Gets the RTC divider value.

@@ -207,7 +207,20 @@ void BKP_SetRTCCalibrationValue(uint8_t CalibrationValue)
   /* Clear CAL[6:0] bits */
   tmpreg &= RTCCR_CAL_MASK;
   /* Set CAL[6:0] bits according to CalibrationValue value */
+
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wconversion"
+  #endif
+
   tmpreg |= CalibrationValue;
+
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic pop
+  #endif
+
   /* Store the new value */
   BKP->RTCCR = tmpreg;
 }

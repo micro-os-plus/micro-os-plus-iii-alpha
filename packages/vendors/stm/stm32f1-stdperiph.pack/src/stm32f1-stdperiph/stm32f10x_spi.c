@@ -325,8 +325,17 @@ void I2S_Init(SPI_TypeDef* SPIx, I2S_InitTypeDef* I2S_InitStruct)
     }
     else
     {
+      // [ILG]
+      #if defined ( __GNUC__ )
+      #pragma GCC diagnostic push
+      #pragma GCC diagnostic ignored "-Wsign-conversion"
+      #endif
       /* MCLK output is disabled */
       tmp = (uint16_t)(((((sourceclock / (32 * packetlength)) *10 ) / I2S_InitStruct->I2S_AudioFreq)) + 5);
+      // [ILG]
+      #if defined ( __GNUC__ )
+      #pragma GCC diagnostic pop
+      #endif
     }
     
     /* Remove the floating point */
@@ -490,8 +499,19 @@ void SPI_I2S_ITConfig(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT, FunctionalState New
   /* Get the SPI/I2S IT index */
   itpos = SPI_I2S_IT >> 4;
 
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wconversion"
+  #endif
+
   /* Set the IT mask */
   itmask = (uint16_t)1 << (uint16_t)itpos;
+
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic pop
+  #endif
 
   if (NewState != DISABLE)
   {
@@ -835,14 +855,25 @@ ITStatus SPI_I2S_GetITStatus(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT)
   assert_param(IS_SPI_ALL_PERIPH(SPIx));
   assert_param(IS_SPI_I2S_GET_IT(SPI_I2S_IT));
 
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wconversion"
+  #endif
+
   /* Get the SPI/I2S IT index */
-  itpos = 0x01 << (SPI_I2S_IT & 0x0F);
+  itpos = (uint16_t)(0x01u << (SPI_I2S_IT & 0x0F));
 
   /* Get the SPI/I2S IT mask */
   itmask = SPI_I2S_IT >> 4;
 
   /* Set the IT mask */
   itmask = 0x01 << itmask;
+
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic pop
+  #endif
 
   /* Get the SPI_I2S_IT enable bit status */
   enablestatus = (SPIx->CR2 & itmask) ;
@@ -887,8 +918,17 @@ void SPI_I2S_ClearITPendingBit(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT)
   assert_param(IS_SPI_ALL_PERIPH(SPIx));
   assert_param(IS_SPI_I2S_CLEAR_IT(SPI_I2S_IT));
 
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wconversion"
+  #endif
   /* Get the SPI IT index */
-  itpos = 0x01 << (SPI_I2S_IT & 0x0F);
+  itpos = (uint16_t)(0x01 << (SPI_I2S_IT & 0x0F));
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic pop
+  #endif
 
   /* Clear the selected SPI CRC Error (CRCERR) interrupt pending bit */
   SPIx->SR = (uint16_t)~itpos;

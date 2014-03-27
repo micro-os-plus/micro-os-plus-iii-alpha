@@ -237,8 +237,21 @@ void I2C_Init(I2C_TypeDef* I2Cx, I2C_InitTypeDef* I2C_InitStruct)
     }
     /* Set speed value for standard mode */
     tmpreg |= result;	  
+
+    // [ILG]
+    #if defined ( __GNUC__ )
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wconversion"
+    #endif
+
     /* Set Maximum Rise Time for standard mode */
-    I2Cx->TRISE = freqrange + 1; 
+    I2Cx->TRISE = freqrange + 1;
+    
+    // [ILG]
+    #if defined ( __GNUC__ )
+    #pragma GCC diagnostic pop
+    #endif
+    
   }
   /* Configure speed in fast mode */
   else /*(I2C_InitStruct->I2C_ClockSpeed <= 400000)*/
@@ -475,8 +488,19 @@ void I2C_OwnAddress2Config(I2C_TypeDef* I2Cx, uint8_t Address)
   /* Reset I2Cx Own address2 bit [7:1] */
   tmpreg &= OAR2_ADD2_Reset;
 
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wconversion"
+  #endif
+
   /* Set I2Cx Own address2 */
   tmpreg |= (uint16_t)((uint16_t)Address & (uint16_t)0x00FE);
+
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic pop
+  #endif
 
   /* Store the new register value */
   I2Cx->OAR2 = tmpreg;
@@ -611,8 +635,17 @@ void I2C_Send7bitAddress(I2C_TypeDef* I2Cx, uint8_t Address, uint8_t I2C_Directi
   }
   else
   {
+    // [ILG]
+    #if defined ( __GNUC__ )
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wconversion"
+    #endif
     /* Reset the address bit0 for write */
     Address &= OAR1_ADD0_Reset;
+    // [ILG]
+    #if defined ( __GNUC__ )
+    #pragma GCC diagnostic pop
+    #endif
   }
   /* Send the address */
   I2Cx->DR = Address;
@@ -826,8 +859,18 @@ uint8_t I2C_GetPEC(I2C_TypeDef* I2Cx)
 {
   /* Check the parameters */
   assert_param(IS_I2C_ALL_PERIPH(I2Cx));
+
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wconversion"
+  #endif
   /* Return the selected I2C PEC value */
   return ((I2Cx->SR2) >> 8);
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic pop
+  #endif
 }
 
 /**
@@ -1274,7 +1317,7 @@ ITStatus I2C_GetITStatus(I2C_TypeDef* I2Cx, uint32_t I2C_IT)
 }
 
 /**
-  * @brief  Clears the I2Cx’s interrupt pending bits.
+  * @brief  Clears the I2Cxï¿½s interrupt pending bits.
   * @param  I2Cx: where x can be 1 or 2 to select the I2C peripheral.
   * @param  I2C_IT: specifies the interrupt pending bit to clear. 
   *   This parameter can be any combination of the following values:

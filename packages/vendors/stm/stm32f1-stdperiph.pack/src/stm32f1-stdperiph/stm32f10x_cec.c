@@ -134,7 +134,8 @@ void CEC_DeInit(void)
   */
 void CEC_Init(CEC_InitTypeDef* CEC_InitStruct)
 {
-  uint16_t tmpreg = 0;
+  // [ILG] uint16_t tmpreg = 0;
+  uint32_t tmpreg = 0;
  
   /* Check the parameters */
   assert_param(IS_CEC_BIT_TIMING_ERROR_MODE(CEC_InitStruct->CEC_BitTimingMode)); 

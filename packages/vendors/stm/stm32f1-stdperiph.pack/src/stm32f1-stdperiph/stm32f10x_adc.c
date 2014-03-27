@@ -23,6 +23,12 @@
 #include "stm32f10x_adc.h"
 #include "stm32f10x_rcc.h"
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /** @addtogroup STM32F10x_StdPeriph_Driver
   * @{
   */
@@ -1291,6 +1297,11 @@ void ADC_ClearITPendingBit(ADC_TypeDef* ADCx, uint16_t ADC_IT)
   /* Clear the selected ADC interrupt pending bits */
   ADCx->SR = ~(uint32_t)itmask;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}

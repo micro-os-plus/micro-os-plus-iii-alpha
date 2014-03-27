@@ -129,7 +129,18 @@ void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
     tmppriority |=  NVIC_InitStruct->NVIC_IRQChannelSubPriority & tmpsub;
     tmppriority = tmppriority << 0x04;
         
+    // [ILG]
+    #if defined ( __GNUC__ )
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wconversion"
+    #endif
+
     NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel] = tmppriority;
+
+    // [ILG]
+    #if defined ( __GNUC__ )
+    #pragma GCC diagnostic pop
+    #endif
     
     /* Enable the Selected IRQ Channels --------------------------------------*/
     NVIC->ISER[NVIC_InitStruct->NVIC_IRQChannel >> 0x05] =

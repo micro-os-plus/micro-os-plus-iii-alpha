@@ -827,7 +827,18 @@ FLASH_Status FLASH_ProgramWord(uint32_t Address, uint32_t Data)
       half word */
       tmp = Address + 2;
 
+      // [ILG]
+      #if defined ( __GNUC__ )
+      #pragma GCC diagnostic push
+      #pragma GCC diagnostic ignored "-Wconversion"
+      #endif
+
       *(__IO uint16_t*) tmp = Data >> 16;
+
+      // [ILG]
+      #if defined ( __GNUC__ )
+      #pragma GCC diagnostic pop
+      #endif
     
       /* Wait for last operation to be completed */
       status = FLASH_WaitForLastOperation(ProgramTimeout);
@@ -1431,8 +1442,8 @@ FlagStatus FLASH_GetFlagStatus(uint32_t FLASH_FLAG)
 /**
   * @brief  Clears the FLASH's pending flags.
   * @note   This function can be used for all STM32F10x devices.
-  *         - For STM32F10X_XL devices, this function clears Bank1 or Bank2’s pending flags
-  *         - For other devices, it clears Bank1’s pending flags.
+  *         - For STM32F10X_XL devices, this function clears Bank1 or Bank2ï¿½s pending flags
+  *         - For other devices, it clears Bank1ï¿½s pending flags.
   * @param  FLASH_FLAG: specifies the FLASH flags to clear.
   *   This parameter can be any combination of the following values:         
   *     @arg FLASH_FLAG_PGERR: FLASH Program error flag       
