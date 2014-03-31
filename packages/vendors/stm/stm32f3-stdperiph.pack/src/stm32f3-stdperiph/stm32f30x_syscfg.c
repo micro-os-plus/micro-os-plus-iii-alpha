@@ -409,6 +409,12 @@ void SYSCFG_SRAMWRPEnable(uint32_t SYSCFG_SRAMWRP)
   SYSCFG->RCR |= (uint32_t)SYSCFG_SRAMWRP;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Checks whether the specified SYSCFG flag is set or not.
   * @param  SYSCFG_Flag: specifies the SYSCFG flag to check. 
@@ -437,6 +443,11 @@ FlagStatus SYSCFG_GetFlagStatus(uint32_t SYSCFG_Flag)
   /* Return the SYSCFG_Flag status */
   return  bitstatus;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Clears the selected SYSCFG flag.

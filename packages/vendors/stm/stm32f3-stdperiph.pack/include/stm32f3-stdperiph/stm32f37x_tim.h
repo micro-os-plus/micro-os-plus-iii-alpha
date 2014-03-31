@@ -30,6 +30,12 @@
 #ifndef __STM32F37X_TIM_H
 #define __STM32F37X_TIM_H
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -1181,6 +1187,11 @@ void TIM_RemapConfig(TIM_TypeDef* TIMx, uint16_t TIM_Remap);
 
 #ifdef __cplusplus
 }
+#endif
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
 #endif
 
 #endif /*__STM32F37X_TIM_H */

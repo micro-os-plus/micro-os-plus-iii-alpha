@@ -163,6 +163,12 @@ void SDADC_DeInit(SDADC_TypeDef* SDADCx)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /**
   * @brief  Initializes the SDADCx peripheral according to the specified parameters
   *         in the SDADC_InitStruct.
@@ -204,6 +210,11 @@ void SDADC_Init(SDADC_TypeDef* SDADCx, SDADC_InitTypeDef* SDADC_InitStruct)
   /* Write to SDADCx_CR2 */
   SDADCx->CR2 = tmpcr2;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Fills each SDADC_InitStruct member with its default value.  

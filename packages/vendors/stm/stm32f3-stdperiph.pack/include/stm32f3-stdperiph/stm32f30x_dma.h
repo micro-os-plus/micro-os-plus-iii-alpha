@@ -30,6 +30,12 @@
 #ifndef __STM32F30X_DMA_H
 #define __STM32F30X_DMA_H
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -421,6 +427,11 @@ void DMA_ClearITPendingBit(uint32_t DMAy_IT);
 
 #ifdef __cplusplus
 }
+#endif
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
 #endif
 
 #endif /*__STM32F30X_DMA_H */

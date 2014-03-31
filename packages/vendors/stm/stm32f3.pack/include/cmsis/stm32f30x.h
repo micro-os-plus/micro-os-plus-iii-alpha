@@ -12,8 +12,8 @@
   *          is using in the C source code, usually in main.c. This file contains:
   *           - Configuration section that allows to select:
   *              - The device used in the target application
-  *              - To use or not the peripheral’s drivers in application code(i.e. 
-  *                code will be based on direct access to peripheral’s registers 
+  *              - To use or not the peripheral's drivers in application code(i.e.
+  *                code will be based on direct access to peripheral's registers
   *                rather than drivers API), this option is controlled by 
   *                "#define USE_STDPERIPH_DRIVER"
   *              - To change few application-specific parameters such as the HSE 
@@ -727,6 +727,12 @@ typedef struct
   uint16_t  RESERVED8;    /*!< Reserved, 0x22                                                            */    
 } SPI_TypeDef;
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
 /** 
   * @brief TIM
   */
@@ -763,6 +769,10 @@ typedef struct
   __IO uint32_t CCR6;        /*!< TIM capture/compare register 4,      Address offset: 0x5C */
 } TIM_TypeDef;
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /** 
   * @brief Touch Sensing Controller (TSC)
@@ -6163,7 +6173,20 @@ typedef struct
   */ 
 
 #ifdef USE_STDPERIPH_DRIVER
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
   #include "stm32f30x_conf.h"
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 #endif /* USE_STDPERIPH_DRIVER */
 
 /** @addtogroup Exported_macro

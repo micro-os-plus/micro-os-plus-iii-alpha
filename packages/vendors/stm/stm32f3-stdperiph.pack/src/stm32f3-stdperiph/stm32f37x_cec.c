@@ -257,6 +257,12 @@ void CEC_ListenModeCmd(FunctionalState NewState)
   *(__IO uint32_t *) CFGR_LSTN_BB = (uint32_t)NewState;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /**
   * @brief  Defines the Own Address of the CEC device.
   * @param  CEC_OwnAddress: The CEC own address.
@@ -272,6 +278,11 @@ void CEC_OwnAddressConfig(uint8_t CEC_OwnAddress)
   /* Set the CEC own address */
   CEC->CFGR |= tmp;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Clears the Own Address of the CEC device.
@@ -420,6 +431,12 @@ void CEC_EndOfMessage(void)
   * @{
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Enables or disables the selected CEC interrupts.
   * @param  CEC_IT: specifies the CEC interrupt source to be enabled.
@@ -458,6 +475,11 @@ void CEC_ITConfig(uint16_t CEC_IT, FunctionalState NewState)
     CEC->IER &= CEC_IT;
   }
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Gets the CEC flag status.

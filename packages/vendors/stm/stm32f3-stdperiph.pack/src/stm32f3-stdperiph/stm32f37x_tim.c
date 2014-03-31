@@ -1025,6 +1025,12 @@ void TIM_OCStructInit(TIM_OCInitTypeDef* TIM_OCInitStruct)
   TIM_OCInitStruct->TIM_OCNIdleState = TIM_OCNIdleState_Reset;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Selects the TIM Output Compare Mode.
   * @note   This function disables the selected channel before changing the Output
@@ -1087,6 +1093,11 @@ void TIM_SelectOCxM(TIM_TypeDef* TIMx, uint16_t TIM_Channel, uint16_t TIM_OCMode
     *(__IO uint32_t *) tmp |= (uint16_t)(TIM_OCMode << 8);
   }
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Sets the TIMx Capture Compare1 Register value
@@ -1739,6 +1750,12 @@ void TIM_SelectOCREFClear(TIM_TypeDef* TIMx, uint16_t TIM_OCReferenceClear)
   TIMx->SMCR |=  TIM_OCReferenceClear;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Enables or disables the TIM Capture Compare Channel x.
   * @param  TIMx: where x can be 2, 3, 4, 5, 12, 13, 14, 15, 16, 17 and 19 to select 
@@ -1799,6 +1816,11 @@ void TIM_CCxNCmd(TIM_TypeDef* TIMx, uint16_t TIM_Channel, uint16_t TIM_CCxN)
   /* Set or reset the CCxNE Bit */ 
   TIMx->CCER |=  (uint16_t)(TIM_CCxN << TIM_Channel);
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Selects the TIM peripheral Commutation event.

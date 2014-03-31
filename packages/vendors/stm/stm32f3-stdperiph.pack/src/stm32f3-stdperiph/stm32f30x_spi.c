@@ -373,6 +373,12 @@ void I2S_StructInit(I2S_InitTypeDef* I2S_InitStruct)
   I2S_InitStruct->I2S_CPOL = I2S_CPOL_Low;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /**
   * @brief  Initializes the SPIx peripheral according to the specified 
   *   parameters in the I2S_InitStruct.
@@ -483,6 +489,11 @@ void I2S_Init(SPI_TypeDef* SPIx, I2S_InitTypeDef* I2S_InitStruct)
   /* Write to SPIx I2SCFGR */
   SPIx->I2SCFGR = tmpreg;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Enables or disables the specified SPI peripheral.
@@ -1208,6 +1219,12 @@ void SPI_LastDMATransferCmd(SPI_TypeDef* SPIx, uint16_t SPI_LastDMATransfer)
   * @{
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Enables or disables the specified SPI/I2S interrupts.
   * @param  SPIx: To select the SPIx/I2Sx peripheral, where x can be: 1, 2 or 3 
@@ -1390,6 +1407,11 @@ ITStatus SPI_I2S_GetITStatus(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT)
   /* Return the SPI_I2S_IT status */
   return bitstatus;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}

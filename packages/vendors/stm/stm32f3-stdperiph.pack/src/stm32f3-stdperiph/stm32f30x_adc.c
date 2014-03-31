@@ -228,6 +228,12 @@ void ADC_StructInit(ADC_InitTypeDef* ADC_InitStruct)
   ADC_InitStruct->ADC_NbrOfRegChannel = 1; 
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /**
   * @brief  Initializes the ADCx peripheral according to the specified parameters
   *         in the ADC_InitStruct.
@@ -267,6 +273,11 @@ void ADC_InjectedInit(ADC_TypeDef* ADCx, ADC_InjectedInitTypeDef* ADC_InjectedIn
   /* Write to ADCx SQR1 */
   ADCx->JSQR = tmpreg1;  
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Fills each ADC_InjectedInitStruct member with its default value.
@@ -1122,6 +1133,12 @@ void ADC_VbatCmd(ADC_TypeDef* ADCx, FunctionalState NewState)
   * @{
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /**
   * @brief  Configures for the selected ADC regular channel its corresponding
   *         rank in the sequencer and its sample time.
@@ -1397,6 +1414,11 @@ void ADC_DiscModeChannelCountConfig(ADC_TypeDef* ADCx, uint8_t Number)
   /* Store the new register value */
   ADCx->CFGR = tmpreg1;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Enables or disables the discontinuous mode on regular group
@@ -2009,6 +2031,13 @@ void ADC_InjectedDiscModeCmd(ADC_TypeDef* ADCx, FunctionalState NewState)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Returns the ADC injected channel conversion result
   * @param  ADCx: where x can be 1, 2, 3 or 4 to select the ADC peripheral.
@@ -2386,6 +2415,11 @@ ITStatus ADC_GetITStatus(ADC_TypeDef* ADCx, uint32_t ADC_IT)
   }
   return bitstatus;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Clears the ADCx's interrupt pending bits.

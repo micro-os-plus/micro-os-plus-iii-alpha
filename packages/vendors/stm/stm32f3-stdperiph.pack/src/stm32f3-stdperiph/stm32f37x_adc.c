@@ -137,6 +137,12 @@
   * @{
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Deinitializes the ADCx peripheral registers to their default reset values.
   * @param  ADCx: where x can be 1 to select the ADC peripheral.
@@ -152,6 +158,11 @@ void ADC_DeInit(ADC_TypeDef* ADCx)
   /* Release ADC1 from reset state */
   RCC_APB2PeriphResetCmd(RCC_APB2Periph_ADC1, DISABLE);
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Initializes the ADCx peripheral according to the specified parameters
@@ -714,6 +725,12 @@ void ADC_ContinuousModeCmd(ADC_TypeDef* ADCx, FunctionalState NewState)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /**
   * @brief  Configures the discontinuous mode for the selected ADC regular
   *         group channel.
@@ -739,6 +756,11 @@ void ADC_DiscModeChannelCountConfig(ADC_TypeDef* ADCx, uint8_t Number)
   /* Store the new register value */
   ADCx->CR1 = tmpreg1;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Enables or disables the discontinuous mode on regular group
@@ -859,6 +881,12 @@ void ADC_DMACmd(ADC_TypeDef* ADCx, FunctionalState NewState)
 @endverbatim
   * @{
   */ 
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
 
 /**
   * @brief  Configures for the selected ADC injected channel its corresponding
@@ -1200,6 +1228,11 @@ uint16_t ADC_GetInjectedConversionValue(ADC_TypeDef* ADCx, uint8_t ADC_InjectedC
   /* Returns the selected injected channel conversion data value */
   return (uint16_t) (*(__IO uint32_t*)  tmp);   
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}
