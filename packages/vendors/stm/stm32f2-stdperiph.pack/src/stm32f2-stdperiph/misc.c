@@ -124,6 +124,12 @@ void NVIC_PriorityGroupConfig(uint32_t NVIC_PriorityGroup)
   SCB->AIRCR = AIRCR_VECTKEY_MASK | NVIC_PriorityGroup;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Initializes the NVIC peripheral according to the specified
   *         parameters in the NVIC_InitStruct.
@@ -167,6 +173,11 @@ void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
       (uint32_t)0x01 << (NVIC_InitStruct->NVIC_IRQChannel & (uint8_t)0x1F);
   }
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Sets the vector table location and Offset.

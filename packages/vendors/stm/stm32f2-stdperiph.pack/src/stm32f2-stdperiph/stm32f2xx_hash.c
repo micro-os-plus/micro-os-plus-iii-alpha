@@ -315,6 +315,12 @@ void HASH_DataIn(uint32_t Data)
   HASH->DIN = Data;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Returns the number of words already pushed into the IN FIFO.
   * @param  None
@@ -325,6 +331,11 @@ uint8_t HASH_GetInFIFOWordsNbr(void)
   /* Return the value of NBW bits */
   return ((HASH->CR & HASH_CR_NBW) >> 8);
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Provides the message digest result.

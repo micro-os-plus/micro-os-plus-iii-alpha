@@ -71,14 +71,8 @@ void __attribute__ ((weak, alias ("Default_Handler")))
 TIM1_UP_TIM10_IRQHandler(void);
 void __attribute__ ((weak, alias ("Default_Handler")))
 TIM1_TRG_COM_TIM11_IRQHandler(void);
-
-void __attribute__ ((weak, alias ("Default_Handler")))
-TIM1_CC_IRQHandler(void);
-void __attribute__ ((weak, alias ("Default_Handler")))
-TIM2_IRQHandler(void);
 void __attribute__ ((weak, alias ("Default_Handler")))
 TIM1_TRG_COM_IRQHandler(void);
-
 void __attribute__ ((weak, alias ("Default_Handler")))
 TIM1_CC_IRQHandler(void);
 void __attribute__ ((weak, alias ("Default_Handler")))
@@ -137,7 +131,7 @@ UART4_IRQHandler(void);
 void __attribute__ ((weak, alias ("Default_Handler")))
 UART5_IRQHandler(void);
 void __attribute__ ((weak, alias ("Default_Handler")))
-TIM6_IRQHandler(void);
+TIM6_DAC_IRQHandler(void);
 void __attribute__ ((weak, alias ("Default_Handler")))
 TIM7_IRQHandler(void);
 void __attribute__ ((weak, alias ("Default_Handler")))

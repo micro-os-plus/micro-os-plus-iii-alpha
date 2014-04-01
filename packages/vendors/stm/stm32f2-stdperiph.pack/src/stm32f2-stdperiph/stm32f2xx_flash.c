@@ -680,6 +680,12 @@ void FLASH_OB_Lock(void)
   FLASH->OPTCR |= FLASH_OPTCR_OPTLOCK;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Enables or disables the write protection of the desired sectors
   * @param  OB_WRP: specifies the sector(s) to be write protected or unprotected.
@@ -800,6 +806,11 @@ void FLASH_OB_BORConfig(uint8_t OB_BOR)
   *(__IO uint8_t *)OPTCR_BYTE0_ADDRESS |= OB_BOR;
 
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Launch the option byte loading.

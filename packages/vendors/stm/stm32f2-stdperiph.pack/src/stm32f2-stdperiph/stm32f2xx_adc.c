@@ -918,6 +918,12 @@ void ADC_ContinuousModeCmd(ADC_TypeDef* ADCx, FunctionalState NewState)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /**
   * @brief  Configures the discontinuous mode for the selected ADC regular group 
   *         channel.
@@ -948,6 +954,11 @@ void ADC_DiscModeChannelCountConfig(ADC_TypeDef* ADCx, uint8_t Number)
   /* Store the new register value */
   ADCx->CR1 = tmpreg1;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Enables or disables the discontinuous mode on regular group channel 
@@ -1150,6 +1161,13 @@ void ADC_MultiModeDMARequestAfterLastTransferCmd(FunctionalState NewState)
 @endverbatim
   * @{
   */ 
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /**
   * @brief  Configures for the selected ADC injected channel its corresponding
   *         rank in the sequencer and its sample time.
@@ -1273,6 +1291,11 @@ void ADC_InjectedSequencerLengthConfig(ADC_TypeDef* ADCx, uint8_t Length)
   /* Store the new register value */
   ADCx->JSQR = tmpreg1;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Set the injected channels conversion value offset
@@ -1465,6 +1488,12 @@ void ADC_InjectedDiscModeCmd(ADC_TypeDef* ADCx, FunctionalState NewState)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /**
   * @brief  Returns the ADC injected channel conversion result
   * @param  ADCx: where x can be 1, 2 or 3 to select the ADC peripheral.
@@ -1490,6 +1519,12 @@ uint16_t ADC_GetInjectedConversionValue(ADC_TypeDef* ADCx, uint8_t ADC_InjectedC
   /* Returns the selected injected channel conversion data value */
   return (uint16_t) (*(__IO uint32_t*)  tmp); 
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 /**
   * @}
   */

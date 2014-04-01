@@ -258,6 +258,12 @@ void SPI_Init(SPI_TypeDef* SPIx, SPI_InitTypeDef* SPI_InitStruct)
   SPIx->CRCPR = SPI_InitStruct->SPI_CRCPolynomial;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /**
   * @brief  Initializes the SPIx peripheral according to the specified 
   *         parameters in the I2S_InitStruct.
@@ -403,6 +409,11 @@ void I2S_Init(SPI_TypeDef* SPIx, I2S_InitTypeDef* I2S_InitStruct)
   /* Write to SPIx I2SCFGR */  
   SPIx->I2SCFGR = tmpreg;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Fills each SPI_InitStruct member with its default value.
@@ -972,6 +983,12 @@ void SPI_I2S_DMACmd(SPI_TypeDef* SPIx, uint16_t SPI_I2S_DMAReq, FunctionalState 
   * @{
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Enables or disables the specified SPI/I2S interrupts.
   * @param  SPIx: To select the SPIx/I2Sx peripheral, where x can be: 1, 2 or 3 
@@ -1163,6 +1180,11 @@ void SPI_I2S_ClearITPendingBit(SPI_TypeDef* SPIx, uint8_t SPI_I2S_IT)
   /* Clear the selected SPI CRC Error (CRCERR) interrupt pending bit */
   SPIx->SR = (uint16_t)~itpos;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}

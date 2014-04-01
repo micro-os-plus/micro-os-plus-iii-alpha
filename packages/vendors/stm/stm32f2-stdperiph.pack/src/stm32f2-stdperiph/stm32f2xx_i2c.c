@@ -166,6 +166,12 @@ void I2C_DeInit(I2C_TypeDef* I2Cx)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Initializes the I2Cx peripheral according to the specified 
   *         parameters in the I2C_InitStruct.
@@ -281,6 +287,11 @@ void I2C_Init(I2C_TypeDef* I2Cx, I2C_InitTypeDef* I2C_InitStruct)
   /* Set I2Cx Own Address1 and acknowledged address */
   I2Cx->OAR1 = (I2C_InitStruct->I2C_AcknowledgedAddress | I2C_InitStruct->I2C_OwnAddress1);
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Fills each I2C_InitStruct member with its default value.
@@ -431,6 +442,12 @@ void I2C_AcknowledgeConfig(I2C_TypeDef* I2Cx, FunctionalState NewState)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Configures the specified I2C own address2.
   * @param  I2Cx: where x can be 1, 2 or 3 to select the I2C peripheral.
@@ -456,6 +473,11 @@ void I2C_OwnAddress2Config(I2C_TypeDef* I2Cx, uint8_t Address)
   /* Store the new register value */
   I2Cx->OAR2 = tmpreg;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Enables or disables the specified I2C dual addressing mode.
@@ -784,6 +806,12 @@ void I2C_PECPositionConfig(I2C_TypeDef* I2Cx, uint16_t I2C_PECPosition)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Enables or disables the PEC value calculation of the transferred bytes.
   * @param  I2Cx: where x can be 1, 2 or 3 to select the I2C peripheral.
@@ -808,6 +836,7 @@ void I2C_CalculatePEC(I2C_TypeDef* I2Cx, FunctionalState NewState)
   }
 }
 
+
 /**
   * @brief  Returns the PEC value for the specified I2C.
   * @param  I2Cx: where x can be 1, 2 or 3 to select the I2C peripheral.
@@ -820,6 +849,11 @@ uint8_t I2C_GetPEC(I2C_TypeDef* I2Cx)
   /* Return the selected I2C PEC value */
   return ((I2Cx->SR2) >> 8);
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}

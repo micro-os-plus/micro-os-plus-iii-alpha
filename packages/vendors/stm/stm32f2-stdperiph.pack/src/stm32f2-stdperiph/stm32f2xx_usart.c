@@ -429,6 +429,12 @@ void USART_Cmd(USART_TypeDef* USARTx, FunctionalState NewState)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Sets the system clock prescaler.
   * @param  USARTx: where x can be 1, 2, 3, 4, 5 or 6 to select the USART or 
@@ -447,6 +453,11 @@ void USART_SetPrescaler(USART_TypeDef* USARTx, uint8_t USART_Prescaler)
   /* Set the USART prescaler */
   USARTx->GTPR |= USART_Prescaler;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Enables or disables the USART's 8x oversampling mode.
@@ -601,6 +612,12 @@ uint16_t USART_ReceiveData(USART_TypeDef* USARTx)
   * @{
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Sets the address of the USART node.
   * @param  USARTx: where x can be 1, 2, 3, 4, 5 or 6 to select the USART or 
@@ -619,6 +636,12 @@ void USART_SetAddress(USART_TypeDef* USARTx, uint8_t USART_Address)
   /* Set the USART address node */
   USARTx->CR2 |= USART_Address;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 
 /**
   * @brief  Determines if the USART is in mute mode or not.
@@ -1406,6 +1429,12 @@ ITStatus USART_GetITStatus(USART_TypeDef* USARTx, uint16_t USART_IT)
   return bitstatus;  
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Clears the USARTx's interrupt pending bits.
   * @param  USARTx: where x can be 1, 2, 3, 4, 5 or 6 to select the USART or 
@@ -1449,6 +1478,11 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT)
   itmask = ((uint16_t)0x01 << (uint16_t)bitpos);
   USARTx->SR = (uint16_t)~itmask;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}

@@ -740,6 +740,12 @@ void CAN_CancelTransmit(CAN_TypeDef* CANx, uint8_t Mailbox)
   * @{
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Receives a correct CAN frame.
   * @param  CANx: where x can be 1 or 2 to select the CAN peripheral.
@@ -790,6 +796,11 @@ void CAN_Receive(CAN_TypeDef* CANx, uint8_t FIFONumber, CanRxMsg* RxMessage)
     CANx->RF1R |= CAN_RF1R_RFOM1;
   }
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Releases the specified receive FIFO.

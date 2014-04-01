@@ -81,6 +81,12 @@
   * @{
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Compute the HASH MD5 digest.
   * @param  Input: pointer to the Input buffer to be treated.
@@ -300,6 +306,12 @@ ErrorStatus HMAC_MD5(uint8_t *Key, uint32_t Keylen, uint8_t *Input,
   }
   return status;  
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 /**
   * @}
   */ 
