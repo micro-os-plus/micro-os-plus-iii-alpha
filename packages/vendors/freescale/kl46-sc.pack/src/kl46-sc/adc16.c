@@ -20,7 +20,11 @@
 #include "adc16.h"
 
 
-
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
 
 /******************************************************************************
 Function 1. Name	AUTO CAL ROUTINE   
@@ -87,7 +91,6 @@ uint8 ADC_Cal(ADC_MemMapPtr adcmap)
 
 
 
-
 /******************************************************************************
 Function 2 Name 	ADC_Config_Alt 
 Parameters		the register values to be set in the adc in a structure
@@ -133,5 +136,10 @@ void ADC_Read_Cal(ADC_MemMapPtr adcmap, tADC_Cal_Blk *blk)
   blk->CLM0 = ADC_CLM0_REG(adcmap);
   
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 

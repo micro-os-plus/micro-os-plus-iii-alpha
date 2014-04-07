@@ -14,6 +14,12 @@
 #include "arm_cm0.h"
 #endif
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat"
+#endif
+
 /********************************************************************/
 /*
  * Initialize the RTC
@@ -144,3 +150,9 @@ void rtc_isr(void)
    }	
     return;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+

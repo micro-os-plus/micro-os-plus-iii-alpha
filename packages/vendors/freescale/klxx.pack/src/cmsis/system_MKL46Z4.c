@@ -51,7 +51,10 @@
  */
 
 #include <stdint.h>
-#include "MKL46Z4_CMSIS.h"
+
+// [ILG]
+// #include "MKL46Z4_CMSIS.h"
+#include "MKL46Z4.h"
 
 #define DISABLE_WDOG    1
 
@@ -197,6 +200,13 @@ void SystemInit (void) {
 #endif /* (CLOCK_SETUP == 2) */
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /* ----------------------------------------------------------------------------
    -- SystemCoreClockUpdate()
    ---------------------------------------------------------------------------- */
@@ -272,3 +282,9 @@ void SystemCoreClockUpdate (void) {
   } /* (!((MCG->C1 & MCG_C1_CLKS_MASK) == 0x80u)) */
   SystemCoreClock = (MCGOUTClock / (1u + ((SIM->CLKDIV1 & SIM_CLKDIV1_OUTDIV1_MASK) >> SIM_CLKDIV1_OUTDIV1_SHIFT)));
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+

@@ -24,6 +24,13 @@
 #include "mcg.h"
 #include "uart.h"
 int i;
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 void LVD_Initalize(unsigned char lvd_select, 
                    unsigned char lvd_reset_enable,
                    unsigned char lvd_int_enable, 
@@ -37,6 +44,12 @@ void LVD_Initalize(unsigned char lvd_select,
                  (lvw_int_enable) |    //LVW interrupt?
                   PMC_LVDSC2_LVWV(lvw_select);  // select LVW level 1,2,3 or 4
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 //******************************************************************************
 void LVD_Init(void)
 {

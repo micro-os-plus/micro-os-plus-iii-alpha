@@ -23,6 +23,14 @@
 #include "smc.h"
 
 /***************************************************************/
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /*
  * Configures the ARM system control register for WAIT(sleep)mode
  * and then executes the WFI instruction to enter the mode.
@@ -575,6 +583,10 @@ void enter_vlls0_nopor(void)
 #endif
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /********************************************************************/
 /********************End of Functions *******************************/

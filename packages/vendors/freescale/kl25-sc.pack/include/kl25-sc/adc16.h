@@ -166,6 +166,12 @@
 #define PGAG_32            0x05
 #define PGAG_64            0x06
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
 /////////// The above values fit into the structure below to select ADC/PGA
 /////////// configuration desired:
 
@@ -206,6 +212,10 @@ uint8_t   CLM1;
 uint8_t   CLM0;
 } tADC_Cal_Blk ;  
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 
 

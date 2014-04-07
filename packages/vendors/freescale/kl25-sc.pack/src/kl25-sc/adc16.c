@@ -20,6 +20,11 @@
 #include "adc16.h"
 
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
 
 
 /******************************************************************************
@@ -134,4 +139,8 @@ void ADC_Read_Cal(ADC_MemMapPtr adcmap, tADC_Cal_Blk *blk)
   
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 

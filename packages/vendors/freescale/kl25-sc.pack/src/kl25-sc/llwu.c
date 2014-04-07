@@ -17,6 +17,12 @@
 extern int re_init_clk;
 extern int clock_freq_hz;
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wmissing-prototypes"
+#endif
 
 /* function: llwu_configure
 
@@ -256,3 +262,8 @@ void llwu_isr(void){
    }
    NVIC_ICPR |= 1 << (LLWU_irq_no%32);
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif

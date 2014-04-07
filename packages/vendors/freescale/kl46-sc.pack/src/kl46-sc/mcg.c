@@ -18,6 +18,14 @@ char drs_val, dmx32_val;
 
 
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
+#endif
 
 
 /*********************************************************************************************/
@@ -1821,5 +1829,9 @@ void clk_monitor_0(unsigned char en_dis)
   }
 }    // end clk_monitor_0
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 

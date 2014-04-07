@@ -107,6 +107,15 @@ void enter_wait(void)
     wait();
 #endif
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+#endif
+
 /********************************************************************/
 /* STOP mode entry routine. Puts the processor into normal stop mode.
  * In this mode core, bus and peripheral clocks are disabled.
@@ -576,6 +585,10 @@ void enter_vlls0_nopor(void)
 #endif
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /********************************************************************/
 /********************End of Functions *******************************/

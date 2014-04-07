@@ -169,6 +169,12 @@
 /////////// The above values fit into the structure below to select ADC/PGA
 /////////// configuration desired:
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif
+
 typedef struct adc_cfg {
   uint8_t  CONFIG1; 
   uint8_t  CONFIG2; 
@@ -206,8 +212,10 @@ uint8_t   CLM1;
 uint8_t   CLM0;
 } tADC_Cal_Blk ;  
 
-
-
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 // function prototypes:
 

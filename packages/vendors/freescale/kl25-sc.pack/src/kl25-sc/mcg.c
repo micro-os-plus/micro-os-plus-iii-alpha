@@ -17,7 +17,13 @@ extern int core_clk_khz;
 char drs_val, dmx32_val;
 
 
-
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
 
 
 /*********************************************************************************************/
@@ -2017,3 +2023,7 @@ unsigned char chk_for_resistor(void)
   }       
 } // chk_for_resistor
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif

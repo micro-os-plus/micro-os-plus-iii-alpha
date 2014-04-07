@@ -10,6 +10,14 @@
 #include "uart.h"
 #include <stdarg.h>
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /********************************************************************/
 /*
  * Initialize the uart for 8N1 operation, interrupts disabled, and
@@ -368,4 +376,9 @@ int __close_console(__file_handle handle)
   return(__no_io_error);
 }
 
+#endif
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
 #endif

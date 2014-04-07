@@ -17,6 +17,11 @@
 extern int re_init_clk;
 extern int clock_freq_hz;
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
 
 /* function: llwu_configure
 
@@ -180,7 +185,18 @@ void llwu_configure_filter(unsigned int wu_pin_num, unsigned char filter_en, uns
     	 printf("\nError - invalid filter number\n"); 
      }
 }    
-    
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wmissing-prototypes"
+#endif
+
 //Interrupt handler for LLWU 
 #ifdef CMSIS
 void LLW_IRQHandler(void) {
@@ -256,3 +272,9 @@ void llwu_isr(void){
    }
    NVIC_ICPR |= 1 << (LLWU_irq_no%32);
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+

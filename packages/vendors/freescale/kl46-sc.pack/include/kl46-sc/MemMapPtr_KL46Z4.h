@@ -62,9 +62,12 @@
 /** Memory map major version (memory maps with equal major version number are
  * compatible) */
 #define MCU_MEM_MAP_VERSION 0x0200u
+
+// [ILG]
+#ifndef MCU_MEM_MAP_VERSION_MINOR
 /** Memory map minor version */
 #define MCU_MEM_MAP_VERSION_MINOR 0x0000u
-
+#endif
 
 /* ----------------------------------------------------------------------------
    -- Interrupt vector numbers
@@ -152,6 +155,11 @@ typedef struct ADC_MemMap {
  * @{
  */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
 
 /* ADC - Register accessors */
 #define ADC_SC1_REG(base,index)                  ((base)->SC1[index])
@@ -179,6 +187,11 @@ typedef struct ADC_MemMap {
 #define ADC_CLM2_REG(base)                       ((base)->CLM2)
 #define ADC_CLM1_REG(base)                       ((base)->CLM1)
 #define ADC_CLM0_REG(base)                       ((base)->CLM0)
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
  * @}

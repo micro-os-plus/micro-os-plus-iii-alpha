@@ -9,6 +9,15 @@
 #include "common.h"
 #include "i2c.h"
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wshadow"
+#pragma GCC diagnostic ignored "-Wmissing-prototypes"
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 signed char result[20];
 unsigned char MasterTransmission;
 unsigned char SlaveID;
@@ -32,6 +41,7 @@ void init_I2C(void)
   I2C0_F  = 0x14;       /* set MULT and ICR */
   I2C0_C1 = I2C_C1_IICEN_MASK;       /* enable IIC */
 }
+
 
 /*******************************************************************/
 /*!
@@ -203,3 +213,8 @@ unsigned char I2CReadMultiRegisters(unsigned char u8RegisterAddress, unsigned ch
 //  printf("%3d    %3d     %3d\n",result[0],result[2],result[4]);
   return result[0];
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
