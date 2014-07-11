@@ -185,6 +185,12 @@ HAL_StatusTypeDef  HAL_PCCARD_DeInit(PCCARD_HandleTypeDef *hpccard)
   return HAL_OK; 
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  PCCARD MSP Init
   * @param  hpccard: pointer to a PCCARD_HandleTypeDef structure that contains
@@ -210,6 +216,11 @@ __weak void HAL_PCCARD_MspDeInit(PCCARD_HandleTypeDef *hpccard)
             the HAL_PCCARD_MspDeInit could be implemented in the user file
    */ 
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}
@@ -292,6 +303,12 @@ HAL_StatusTypeDef HAL_CF_Read_ID(PCCARD_HandleTypeDef *hpccard, uint8_t CompactF
   return HAL_OK;
 }
    
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Read sector from PCCARD memory
   * @param  hpccard: pointer to a PCCARD_HandleTypeDef structure that contains
@@ -501,6 +518,11 @@ HAL_StatusTypeDef  HAL_CF_Erase_Sector(PCCARD_HandleTypeDef *hpccard, uint16_t S
   return HAL_OK;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 /**
   * @brief  Reset the PCCARD memory 
   * @param  hpccard: pointer to a PCCARD_HandleTypeDef structure that contains
@@ -590,6 +612,12 @@ void HAL_PCCARD_IRQHandler(PCCARD_HandleTypeDef *hpccard)
 
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  PCCARD interrupt feature callback
   * @param  hpccard: pointer to a PCCARD_HandleTypeDef structure that contains
@@ -602,7 +630,12 @@ __weak void HAL_PCCARD_ITCallback(PCCARD_HandleTypeDef *hpccard)
             the HAL_PCCARD_ITCallback could be implemented in the user file
    */
 }
-  
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 /**
   * @}
   */

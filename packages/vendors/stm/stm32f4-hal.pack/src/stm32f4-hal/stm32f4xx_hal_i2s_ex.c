@@ -165,6 +165,12 @@
   * @{
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief Full-Duplex Transmit/Receive data in blocking mode.
   * @param  hi2s: pointer to a I2S_HandleTypeDef structure that contains
@@ -735,6 +741,11 @@ HAL_StatusTypeDef I2SEx_TransmitReceive_IT(I2S_HandleTypeDef *hi2s)
     return HAL_BUSY; 
   }
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}

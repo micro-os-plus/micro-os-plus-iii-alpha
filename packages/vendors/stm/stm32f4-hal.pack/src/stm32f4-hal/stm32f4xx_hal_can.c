@@ -331,6 +331,12 @@ HAL_StatusTypeDef HAL_CAN_Init(CAN_HandleTypeDef* hcan)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Configures the CAN reception filter according to the specified
   *         parameters in the CAN_FilterInitStruct.
@@ -493,6 +499,11 @@ __weak void HAL_CAN_MspDeInit(CAN_HandleTypeDef* hcan)
             the HAL_CAN_MspDeInit could be implemented in the user file
    */ 
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}
@@ -1176,6 +1187,12 @@ void HAL_CAN_IRQHandler(CAN_HandleTypeDef* hcan)
   }  
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Transmission  complete callback in non blocking mode 
   * @param  hcan: pointer to a CAN_HandleTypeDef structure that contains
@@ -1214,6 +1231,11 @@ __weak void HAL_CAN_ErrorCallback(CAN_HandleTypeDef *hcan)
             the HAL_CAN_ErrorCallback could be implemented in the user file
    */
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}

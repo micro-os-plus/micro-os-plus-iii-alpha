@@ -569,6 +569,12 @@ HAL_StatusTypeDef HAL_ETH_DMARxDescListInit(ETH_HandleTypeDef *heth, ETH_DMADesc
   return HAL_OK;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Initializes the ETH MSP.
   * @param  heth: pointer to a ETH_HandleTypeDef structure that contains
@@ -594,6 +600,11 @@ __weak void HAL_ETH_MspDeInit(ETH_HandleTypeDef *heth)
   the HAL_ETH_MspDeInit could be implemented in the user file
   */
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}
@@ -961,6 +972,12 @@ void HAL_ETH_IRQHandler(ETH_HandleTypeDef *heth)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Tx Transfer completed callbacks.
   * @param  heth: pointer to a ETH_HandleTypeDef structure that contains
@@ -999,6 +1016,11 @@ __weak void HAL_ETH_ErrorCallback(ETH_HandleTypeDef *heth)
   the HAL_ETH_TxCpltCallback could be implemented in the user file
   */ 
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Reads a PHY register
@@ -1796,6 +1818,12 @@ static void ETH_MACDMAConfig(ETH_HandleTypeDef *heth, uint32_t err)
      ETH_MACAddressConfig(heth, ETH_MAC_ADDRESS0, heth->Init.MACAddr);
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Configures the selected MAC address.
   * @param  heth: pointer to a ETH_HandleTypeDef structure that contains
@@ -1826,6 +1854,11 @@ static void ETH_MACAddressConfig(ETH_HandleTypeDef *heth, uint32_t MacAddr, uint
   /* Load the selected MAC address low register */
   (*(__IO uint32_t *)((uint32_t)(ETH_MAC_ADDR_LBASE + MacAddr))) = tmpreg;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Enables the MAC transmission.

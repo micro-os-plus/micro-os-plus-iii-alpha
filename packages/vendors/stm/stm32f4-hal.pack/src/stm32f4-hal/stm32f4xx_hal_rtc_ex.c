@@ -547,6 +547,12 @@ void HAL_RTCEx_TamperTimeStampIRQHandler(RTC_HandleTypeDef *hrtc)
   hrtc->State = HAL_RTC_STATE_READY; 
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  TimeStamp callback. 
   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
@@ -585,6 +591,11 @@ __weak void HAL_RTCEx_Tamper2EventCallback(RTC_HandleTypeDef *hrtc)
             the HAL_RTC_Tamper2EventCallback could be implemented in the user file
    */
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  This function handles TimeStamp polling request.
@@ -960,6 +971,12 @@ void HAL_RTCEx_WakeUpTimerIRQHandler(RTC_HandleTypeDef *hrtc)
   hrtc->State = HAL_RTC_STATE_READY; 
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Wake Up Timer callback.
   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
@@ -972,6 +989,11 @@ __weak void HAL_RTCEx_WakeUpTimerEventCallback(RTC_HandleTypeDef *hrtc)
             the HAL_RTC_WakeUpTimerEventCallback could be implemented in the user file
    */
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  This function handles Wake Up Timer Polling.
@@ -1640,6 +1662,12 @@ HAL_StatusTypeDef HAL_RTCEx_DisableBypassShadow(RTC_HandleTypeDef* hrtc)
   * @{
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Alarm B callback.
   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
@@ -1652,6 +1680,11 @@ __weak void HAL_RTCEx_AlarmBEventCallback(RTC_HandleTypeDef *hrtc)
             the HAL_RTC_AlarmBEventCallback could be implemented in the user file
    */
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  This function handles AlarmB Polling request.

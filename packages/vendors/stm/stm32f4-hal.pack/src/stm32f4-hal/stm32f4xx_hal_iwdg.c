@@ -197,6 +197,12 @@ HAL_StatusTypeDef HAL_IWDG_Init(IWDG_HandleTypeDef *hiwdg)
   return HAL_OK;
 }
 
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wunused-parameter"
+  #endif
+
 /**
   * @brief  Initializes the IWDG MSP.
   * @param  hiwdg: pointer to a IWDG_HandleTypeDef structure that contains
@@ -209,6 +215,11 @@ __weak void HAL_IWDG_MspInit(IWDG_HandleTypeDef *hiwdg)
             the HAL_IWDG_MspInit could be implemented in the user file
    */
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}

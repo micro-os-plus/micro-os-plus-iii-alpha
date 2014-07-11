@@ -169,6 +169,12 @@ HAL_StatusTypeDef HAL_CRC_DeInit(CRC_HandleTypeDef *hcrc)
   return HAL_OK;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Initializes the CRC MSP.
   * @param  hcrc: pointer to a CRC_HandleTypeDef structure that contains
@@ -194,6 +200,11 @@ __weak void HAL_CRC_MspDeInit(CRC_HandleTypeDef *hcrc)
             the HAL_CRC_MspDeInit could be implemented in the user file
    */
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}

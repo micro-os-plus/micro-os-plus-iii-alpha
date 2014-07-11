@@ -477,6 +477,12 @@ HAL_StatusTypeDef HAL_UART_DeInit(UART_HandleTypeDef *huart)
   return HAL_OK;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  UART MSP Init.
   * @param  huart: pointer to a UART_HandleTypeDef structure that contains
@@ -502,6 +508,11 @@ HAL_StatusTypeDef HAL_UART_DeInit(UART_HandleTypeDef *huart)
            the HAL_UART_MspDeInit could be implemented in the user file
    */ 
 }
+
+ // [ILG]
+ #if defined ( __GNUC__ )
+ #pragma GCC diagnostic pop
+ #endif
 
 /**
   * @}
@@ -1184,6 +1195,12 @@ void HAL_UART_IRQHandler(UART_HandleTypeDef *huart)
   }  
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Tx Transfer completed callbacks.
   * @param  huart: pointer to a UART_HandleTypeDef structure that contains
@@ -1248,6 +1265,11 @@ __weak void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart)
            the HAL_UART_ErrorCallback could be implemented in the user file
    */ 
 }
+
+ // [ILG]
+ #if defined ( __GNUC__ )
+ #pragma GCC diagnostic pop
+ #endif
 
 /**
   * @}

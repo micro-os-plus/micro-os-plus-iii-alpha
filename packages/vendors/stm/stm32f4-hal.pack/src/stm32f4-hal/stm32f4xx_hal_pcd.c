@@ -113,6 +113,12 @@ static HAL_StatusTypeDef PCD_WriteEmptyTxFifo(PCD_HandleTypeDef *hpcd, uint32_t 
   * @{
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Initializes the PCD according to the specified
   *         parameters in the PCD_InitTypeDef and create the associated handle.
@@ -183,6 +189,11 @@ HAL_StatusTypeDef HAL_PCD_Init(PCD_HandleTypeDef *hpcd)
  return HAL_OK;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 /**
   * @brief  DeInitializes the PCD peripheral 
   * @param  hpcd: PCD handle
@@ -209,6 +220,12 @@ HAL_StatusTypeDef HAL_PCD_DeInit(PCD_HandleTypeDef *hpcd)
   return HAL_OK;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Initializes the PCD MSP.
   * @param  hpcd: PCD handle
@@ -232,6 +249,11 @@ __weak void HAL_PCD_MspDeInit(PCD_HandleTypeDef *hpcd)
             the HAL_PCD_MspDeInit could be implenetd in the user file
    */
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}
@@ -280,6 +302,13 @@ HAL_StatusTypeDef HAL_PCD_Stop(PCD_HandleTypeDef *hpcd)
   __HAL_UNLOCK(hpcd); 
   return HAL_OK;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
 
 /**
   * @brief  This function handles PCD interrupt request.
@@ -572,6 +601,17 @@ void HAL_PCD_IRQHandler(PCD_HandleTypeDef *hpcd)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Data out stage callbacks
   * @param  hpcd: PCD handle
@@ -704,6 +744,11 @@ void HAL_PCD_IRQHandler(PCD_HandleTypeDef *hpcd)
    */ 
 }
 
+ // [ILG]
+ #if defined ( __GNUC__ )
+ #pragma GCC diagnostic pop
+ #endif
+
 /**
   * @}
   */
@@ -834,6 +879,11 @@ HAL_StatusTypeDef HAL_PCD_EP_Close(PCD_HandleTypeDef *hpcd, uint8_t ep_addr)
   return HAL_OK;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
 
 /**
   * @brief  Receive an amount of data  
@@ -964,6 +1014,11 @@ HAL_StatusTypeDef HAL_PCD_EP_SetStall(PCD_HandleTypeDef *hpcd, uint8_t ep_addr)
   return HAL_OK;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 /**
   * @brief  Clear a STALL condition over in an endpoint
   * @param  hpcd: PCD handle
@@ -1080,6 +1135,14 @@ PCD_StateTypeDef HAL_PCD_GetState(PCD_HandleTypeDef *hpcd)
   * @}
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wsign-compare"
+#endif
+
 /**
   * @brief  DCD_WriteEmptyTxFifo
   *         check FIFO for the next packet to be loaded
@@ -1133,6 +1196,11 @@ static HAL_StatusTypeDef PCD_WriteEmptyTxFifo(PCD_HandleTypeDef *hpcd, uint32_t 
   
   return HAL_OK;  
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}

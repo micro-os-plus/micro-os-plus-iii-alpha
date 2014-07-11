@@ -250,6 +250,12 @@ HAL_StatusTypeDef HAL_SPI_DeInit(SPI_HandleTypeDef *hspi)
   return HAL_OK;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief SPI MSP Init
   * @param  hspi: pointer to a SPI_HandleTypeDef structure that contains
@@ -275,6 +281,11 @@ HAL_StatusTypeDef HAL_SPI_DeInit(SPI_HandleTypeDef *hspi)
             the HAL_SPI_MspDeInit could be implenetd in the user file
    */
 }
+
+ // [ILG]
+ #if defined ( __GNUC__ )
+ #pragma GCC diagnostic pop
+ #endif
 
 /**
   * @}
@@ -473,6 +484,12 @@ HAL_StatusTypeDef HAL_SPI_Transmit(SPI_HandleTypeDef *hspi, uint8_t *pData, uint
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Receive an amount of data in blocking mode 
   * @param  hspi: pointer to a SPI_HandleTypeDef structure that contains
@@ -484,7 +501,17 @@ HAL_StatusTypeDef HAL_SPI_Transmit(SPI_HandleTypeDef *hspi, uint8_t *pData, uint
   */
 HAL_StatusTypeDef HAL_SPI_Receive(SPI_HandleTypeDef *hspi, uint8_t *pData, uint16_t Size, uint32_t Timeout)
 {
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+  #endif
   __IO uint16_t tmpreg;
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic pop
+  #endif
+
   uint32_t tmp = 0;
 
   if(hspi->State == HAL_SPI_STATE_READY)
@@ -659,7 +686,17 @@ HAL_StatusTypeDef HAL_SPI_Receive(SPI_HandleTypeDef *hspi, uint8_t *pData, uint1
   */
 HAL_StatusTypeDef HAL_SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxData, uint8_t *pRxData, uint16_t Size, uint32_t Timeout)
 {
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+  #endif
   __IO uint16_t tmpreg;
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic pop
+  #endif
+
   uint32_t tmpstate = 0, tmp = 0;
   
   tmpstate = hspi->State; 
@@ -899,6 +936,11 @@ HAL_StatusTypeDef HAL_SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxD
     return HAL_BUSY;
   }
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Transmit an amount of data in no-blocking mode with Interrupt
@@ -1555,6 +1597,12 @@ void HAL_SPI_IRQHandler(SPI_HandleTypeDef *hspi)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief Tx Transfer completed callbacks
   * @param  hspi: pointer to a SPI_HandleTypeDef structure that contains
@@ -1647,6 +1695,11 @@ __weak void HAL_SPI_TxRxHalfCpltCallback(SPI_HandleTypeDef *hspi)
             and user can use HAL_SPI_GetError() API to check the latest error occurred.
    */
 }
+
+ // [ILG]
+ #if defined ( __GNUC__ )
+ #pragma GCC diagnostic pop
+ #endif
 
 /**
   * @}
@@ -1786,6 +1839,12 @@ static void SPI_TxISR(SPI_HandleTypeDef *hspi)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Interrupt Handler to close Rx transfer 
   * @param  hspi: pointer to a SPI_HandleTypeDef structure that contains
@@ -1794,7 +1853,16 @@ static void SPI_TxISR(SPI_HandleTypeDef *hspi)
   */
 static void SPI_RxCloseIRQHandler(SPI_HandleTypeDef *hspi)
 {
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+  #endif
   __IO uint16_t tmpreg;
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic pop
+  #endif
 
   if(hspi->Init.CRCCalculation == SPI_CRCCALCULATION_ENABLED)
   {
@@ -1983,8 +2051,18 @@ static void SPI_DMATransmitCplt(DMA_HandleTypeDef *hdma)
   */
 static void SPI_DMAReceiveCplt(DMA_HandleTypeDef *hdma)
 {
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+  #endif
   __IO uint16_t tmpreg;
-  
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+  #endif
+
   SPI_HandleTypeDef* hspi = ( SPI_HandleTypeDef* )((DMA_HandleTypeDef* )hdma)->Parent;
   /* DMA Normal mode */
   if((hdma->Instance->CR & DMA_SxCR_CIRC) == 0)
@@ -2054,8 +2132,17 @@ static void SPI_DMAReceiveCplt(DMA_HandleTypeDef *hdma)
   */
 static void SPI_DMATransmitReceiveCplt(DMA_HandleTypeDef *hdma)   
 {
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+  #endif
   __IO uint16_t tmpreg;
-  
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic pop
+  #endif
+
   SPI_HandleTypeDef* hspi = ( SPI_HandleTypeDef* )((DMA_HandleTypeDef* )hdma)->Parent;
   if((hdma->Instance->CR & DMA_SxCR_CIRC) == 0)
   {
@@ -2159,6 +2246,11 @@ static void SPI_DMAHalfTransmitReceiveCplt(DMA_HandleTypeDef *hdma)
 
   HAL_SPI_TxRxHalfCpltCallback(hspi);
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief DMA SPI communication error callback 

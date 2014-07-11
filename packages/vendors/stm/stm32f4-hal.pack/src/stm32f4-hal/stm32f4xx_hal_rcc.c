@@ -231,6 +231,12 @@ void HAL_RCC_DeInit(void)
   CLEAR_REG(RCC->CIR); 
 }
 
+  // [ILG]
+  #if defined ( __GNUC__ )
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wconversion"
+  #endif
+
 /**
   * @brief  Initializes the RCC Oscillators according to the specified parameters in the
   *         RCC_OscInitTypeDef.
@@ -563,7 +569,12 @@ HAL_StatusTypeDef HAL_RCC_OscConfig(RCC_OscInitTypeDef  *RCC_OscInitStruct)
   }
   return HAL_OK;
 }
- 
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 /**
   * @brief  Initializes the CPU, AHB and APB busses clocks according to the specified 
   *         parameters in the RCC_ClkInitStruct.

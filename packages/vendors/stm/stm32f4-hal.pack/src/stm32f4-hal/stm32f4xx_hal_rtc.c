@@ -367,6 +367,12 @@ HAL_StatusTypeDef HAL_RTC_DeInit(RTC_HandleTypeDef *hrtc)
   return HAL_OK;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Initializes the RTC MSP.
   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
@@ -392,6 +398,11 @@ __weak void HAL_RTC_MspDeInit(RTC_HandleTypeDef* hrtc)
             the HAL_RTC_MspDeInit could be implenetd in the user file
    */ 
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}
@@ -1212,7 +1223,13 @@ HAL_StatusTypeDef HAL_RTC_DeactivateAlarm(RTC_HandleTypeDef *hrtc, uint32_t Alar
   
   return HAL_OK; 
 }
-           
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Gets the RTC Alarm value and masks.
   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
@@ -1273,6 +1290,11 @@ HAL_StatusTypeDef HAL_RTC_GetAlarm(RTC_HandleTypeDef *hrtc, RTC_AlarmTypeDef *sA
   return HAL_OK;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 /**
   * @brief  This function handles Alarm interrupt request.
   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
@@ -1314,6 +1336,12 @@ void HAL_RTC_AlarmIRQHandler(RTC_HandleTypeDef* hrtc)
   hrtc->State = HAL_RTC_STATE_READY; 
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Alarm A callback.
   * @param  hrtc: pointer to a RTC_HandleTypeDef structure that contains
@@ -1326,6 +1354,11 @@ __weak void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
             the HAL_RTC_AlarmAEventCallback could be implemented in the user file
    */
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  This function handles AlarmA Polling request.
@@ -1481,6 +1514,12 @@ HAL_StatusTypeDef RTC_EnterInitMode(RTC_HandleTypeDef* hrtc)
   return HAL_OK;  
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
 
 /**
   * @brief  Converts a 2 digit decimal to BCD format.
@@ -1511,6 +1550,11 @@ uint8_t RTC_Bcd2ToByte(uint8_t Value)
   tmp = ((uint8_t)(Value & (uint8_t)0xF0) >> (uint8_t)0x4) * 10;
   return (tmp + (Value & (uint8_t)0x0F));
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}

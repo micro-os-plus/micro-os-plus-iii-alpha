@@ -400,6 +400,11 @@ HAL_StatusTypeDef HAL_SD_DeInit(SD_HandleTypeDef *hsd)
   return HAL_OK;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
 
 /**
   * @brief  Initializes the SD MSP.
@@ -424,6 +429,11 @@ __weak void HAL_SD_MspDeInit(SD_HandleTypeDef *hsd)
             the HAL_SD_MspDeInit could be implemented in the user file
    */
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}
@@ -1384,6 +1394,11 @@ void HAL_SD_IRQHandler(SD_HandleTypeDef *hsd)
                                 SDIO_IT_RXOVERR  | SDIO_IT_STBITERR);                               
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
 
 /**
   * @brief  SD end of transfer callback.
@@ -1461,6 +1476,11 @@ __weak void HAL_SD_DMA_TxErrorCallback(DMA_HandleTypeDef *hdma)
    */ 
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 /**
   * @}
   */
@@ -1479,6 +1499,13 @@ __weak void HAL_SD_DMA_TxErrorCallback(DMA_HandleTypeDef *hdma)
 @endverbatim
   * @{
   */
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
 
 /**
   * @brief  Returns information about specific card.
@@ -1691,6 +1718,11 @@ HAL_SD_ErrorTypedef HAL_SD_Get_CardInfo(SD_HandleTypeDef *hsd, HAL_SD_CardInfoTy
   
   return errorstate;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Enables wide bus operation for the requested card if supported by 
@@ -2105,6 +2137,12 @@ HAL_SD_TransferStateTypedef HAL_SD_GetStatus(SD_HandleTypeDef *hsd)
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Gets the SD card status.
   * @param  hsd: SD handle      
@@ -2187,6 +2225,11 @@ HAL_SD_ErrorTypedef HAL_SD_GetCardStatus(SD_HandleTypeDef *hsd, HAL_SD_CardStatu
   
   return errorstate;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
          
 /**
   * @}

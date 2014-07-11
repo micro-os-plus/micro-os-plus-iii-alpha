@@ -150,6 +150,13 @@ static void CRYPEx_GCMCCM_SetDMAConfig(CRYP_HandleTypeDef *hcryp, uint32_t input
   * @{
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#pragma GCC diagnostic ignored "-Wsign-compare"
+#endif
 
 /**
   * @brief  Initializes the CRYP peripheral in AES CCM encryption mode then 
@@ -2635,6 +2642,11 @@ HAL_StatusTypeDef HAL_CRYPEx_AESCCM_Decrypt_DMA(CRYP_HandleTypeDef *hcryp, uint8
   }
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 /**
   * @brief  This function handles CRYP interrupt request.
   * @param  hcryp: pointer to a CRYP_HandleTypeDef structure that contains
@@ -2721,6 +2733,12 @@ static void CRYPEx_GCMCCM_DMAError(DMA_HandleTypeDef *hdma)
   hcryp->State= HAL_CRYP_STATE_READY;
   HAL_CRYP_ErrorCallback(hcryp);
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
 
 /**
   * @brief  Writes the Key in Key registers. 
@@ -2965,6 +2983,11 @@ static HAL_StatusTypeDef CRYPEx_GCMCCM_SetHeaderPhase(CRYP_HandleTypeDef *hcryp,
   /* Return function status */
   return HAL_OK;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Sets the DMA configuration and start the DMA transfert.

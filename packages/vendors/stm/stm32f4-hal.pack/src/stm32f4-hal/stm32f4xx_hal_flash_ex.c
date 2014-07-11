@@ -219,6 +219,12 @@ HAL_StatusTypeDef HAL_FLASHEx_Erase(FLASH_EraseInitTypeDef *pEraseInit, uint32_t
   return status;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Perform a mass erase or erase the specified FLASH memory sectors  with interrupt enabled
   * @param  pEraseInit: pointer to an FLASH_EraseInitTypeDef structure that
@@ -330,6 +336,11 @@ HAL_StatusTypeDef HAL_FLASHEx_OBProgram(FLASH_OBProgramInitTypeDef *pOBInit)
 
   return status;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief   Get the Option byte configuration
@@ -503,6 +514,12 @@ uint16_t HAL_FLASHEx_OB_GetBank2WRP(void)
   * @}
   */
   
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 #if defined(STM32F427xx) || defined(STM32F437xx) || defined(STM32F429xx)|| defined(STM32F439xx)
 /**
   * @brief  Full erase of FLASH memory sectors 
@@ -553,6 +570,11 @@ static void FLASH_MassErase(uint8_t VoltageRange, uint32_t Banks)
   }
   FLASH->CR |= FLASH_CR_STRT;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Erase the specified FLASH memory sector
@@ -608,6 +630,12 @@ void FLASH_Erase_Sector(uint32_t Sector, uint8_t VoltageRange)
   FLASH->CR |= FLASH_CR_SER | (Sector << POSITION_VAL(FLASH_CR_SNB));
   FLASH->CR |= FLASH_CR_STRT;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
 
 /**
   * @brief  Enable the write protection of the desired bank1 or bank 2 sectors
@@ -681,6 +709,11 @@ static HAL_StatusTypeDef FLASH_OB_EnableWRP(uint32_t WRPSector, uint32_t Banks)
   return status;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 /**
   * @brief  Disable the write protection of the desired bank1 or bank 2 sectors
   *
@@ -752,6 +785,12 @@ static HAL_StatusTypeDef FLASH_OB_DisableWRP(uint32_t WRPSector, uint32_t Banks)
 
   return status;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
 
 /**
   * @brief  Configure the Dual Bank Boot.
@@ -913,10 +952,22 @@ static HAL_StatusTypeDef FLASH_OB_DisablePCROP(uint32_t SectorBank1, uint32_t Se
 
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 #endif /* STM32F427xx || STM32F437xx || STM32F429xx || STM32F439xx */
 
 #if defined(STM32F405xx) || defined(STM32F415xx) || defined(STM32F407xx)|| defined(STM32F417xx) ||\
     defined(STM32F401xC) || defined(STM32F401xE) || defined(STM32F411xE)
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Mass erase of FLASH memory
   * @param  VoltageRange: The device voltage range which defines the erase parallelism.  
@@ -950,6 +1001,11 @@ static void FLASH_MassErase(uint8_t VoltageRange, uint32_t Banks)
    FLASH->CR |= FLASH_CR_MER;
    FLASH->CR |= FLASH_CR_STRT;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Erase the specified FLASH memory sector
@@ -1000,6 +1056,13 @@ void FLASH_Erase_Sector(uint32_t Sector, uint8_t VoltageRange)
   FLASH->CR |= FLASH_CR_SER | (Sector << POSITION_VAL(FLASH_CR_SNB));
   FLASH->CR |= FLASH_CR_STRT;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
 
 /**
   * @brief  Enable the write protection of the desired bank 1 sectors
@@ -1072,9 +1135,22 @@ static HAL_StatusTypeDef FLASH_OB_DisableWRP(uint32_t WRPSector, uint32_t Banks)
   
   return status;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 #endif /* STM32F405xx || STM32F415xx || STM32F407xx || STM32F417xx || STM32F401xC || STM32F401xE || STM32F411xE */
 
 #if defined(STM32F401xC) || defined(STM32F401xE) || defined(STM32F411xE)
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Enable the read/write protection (PCROP) of the desired sectors.
   * @note   This function can be used only for STM32F401xx devices.
@@ -1130,6 +1206,12 @@ static HAL_StatusTypeDef FLASH_OB_DisablePCROP(uint32_t Sector)
   return status;
 
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
 #endif /* STM32F401xC || STM32F401xE || STM32F411xE */
 
 /**
@@ -1204,6 +1286,12 @@ static HAL_StatusTypeDef FLASH_OB_UserConfig(uint8_t Iwdg, uint8_t Stop, uint8_t
 
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief  Set the BOR Level. 
   * @param  Level: specifies the Option Bytes BOR Reset Level.
@@ -1226,6 +1314,11 @@ static HAL_StatusTypeDef FLASH_OB_BOR_LevelConfig(uint8_t Level)
   return HAL_OK;
   
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Return the FLASH User Option Byte value.
