@@ -45,22 +45,37 @@ GTEST_API_ int _tmain(int argc, TCHAR** argv)
   {
 #else
 GTEST_API_ int
-main(int argc, char** argv)
+main (int argc, char** argv)
 {
 #endif  // GTEST_OS_WINDOWS_MOBILE
-  std::cout << "Running main() from gmock_main.cc" << std::endl;
-  std::cout << "Compiled with " __VERSION__ " ";
-#if defined(__x86_64__)
-  std::cout << "x86_64";
-#elif defined(__i386__)
-  std::cout << "i386";
-#endif
   std::cout << std::endl;
+  std::cout << "Running main(" << argc << ", [";
+  for (int i = 0; i < argc; ++i)
+    {
+      if (i != 0)
+	{
+	  std::cout << ", ";
+	}
+      std::cout << '"' << argv[i] << '"';
+    }
+  std::cout << "]) from gmock_main.cc." << std::endl;
+  std::cout << "Compiled with " __VERSION__;
+#if defined(__x86_64__)
+  std::cout << " x86_64";
+#elif defined(__i386__)
+  std::cout << " i386";
+#endif
+  std::cout << '.' << std::endl;
   std::cout << std::endl;
 
   // Since Google Mock depends on Google Test, InitGoogleMock() is
   // also responsible for initializing Google Test.  Therefore there's
   // no need for calling testing::InitGoogleTest() separately.
-  testing::InitGoogleMock(&argc, argv);
-  return RUN_ALL_TESTS();
+  testing::InitGoogleMock (&argc, argv);
+  int ret = RUN_ALL_TESTS ();
+
+  std::cout << std::endl;
+  std::cout << "Return " << ret << ((ret == 0) ? " (PASS)" : " (FAIL)") << '.'
+      << std::endl;
+  return ret;
 }
