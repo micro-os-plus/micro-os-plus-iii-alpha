@@ -40,6 +40,15 @@
 # error Do not include gtest_pred_impl.h directly.  Include gtest.h instead.
 #endif  // GTEST_INCLUDE_GTEST_GTEST_H_
 
+// [ILG] to keep indexer happy
+class AssertionResult;
+
+// Makes a successful assertion result.
+GTEST_API_ AssertionResult AssertionSuccess();
+
+// Makes a failed assertion result.
+GTEST_API_ AssertionResult AssertionFailure();
+
 // This header implements a family of generic predicate assertion
 // macros:
 //

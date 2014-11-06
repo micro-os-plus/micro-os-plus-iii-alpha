@@ -401,7 +401,7 @@
 // On Android, <regex.h> is only available starting with Gingerbread.
 #  define GTEST_HAS_POSIX_RE (__ANDROID_API__ >= 9)
 # else
-#  define GTEST_HAS_POSIX_RE (!GTEST_OS_WINDOWS)
+#  define GTEST_HAS_POSIX_RE (!GTEST_OS_WINDOWS) && !defined(__arm__)
 # endif
 #endif
 
