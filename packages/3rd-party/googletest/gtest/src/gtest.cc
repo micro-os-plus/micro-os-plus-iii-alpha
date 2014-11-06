@@ -432,6 +432,39 @@ std::string UnitTestOptions::GetAbsolutePathToOutputFile() {
   return result.string();
 }
 
+// Returns the name of the requested output file, or the default if none
+// was explicitly specified.
+std::string UnitTestOptions::GetPathToOutputFile() {
+
+  const char* const gtest_output_flag = GTEST_FLAG(output).c_str();
+  if (gtest_output_flag == NULL) {
+    return "";
+  }
+
+  const char* const colon = strchr(gtest_output_flag, ':');
+  if (colon == NULL) {
+    return internal::FilePath(kDefaultOutputFile).string();
+  }
+
+  internal::FilePath output_name(colon + 1);
+  if (!output_name.IsAbsolutePath()) {
+    // TODO(wan@google.com): on Windows \some\path is not an absolute
+    // path (as its meaning depends on the current drive), yet the
+    // following logic for turning it into an absolute path is wrong.
+    // Fix it.
+    output_name = internal::FilePath(colon + 1);
+  }
+
+  if (!output_name.IsDirectory()) {
+    return output_name.string();
+  }
+
+  internal::FilePath result(internal::FilePath::GenerateUniqueFileName(
+      output_name, internal::GetCurrentExecutableName(),
+      GetOutputFormat().c_str()));
+  return result.string();
+}
+
 // Returns true iff the wildcard pattern matches the string.  The
 // first ':' or '\0' character in pattern marks the end of it.
 //
@@ -3220,7 +3253,8 @@ std::string XmlUnitTestResultPrinter::RemoveInvalidXmlCharacters(
 // Formats the given time in milliseconds as seconds.
 std::string FormatTimeInMillisAsSeconds(TimeInMillis ms) {
   ::std::stringstream ss;
-  ss << ms/1000.0;
+  float secs = ms/1000.0;
+  ss << secs;
   return ss.str();
 }
 
@@ -4084,8 +4118,12 @@ void UnitTestImpl::SuppressTestEventsIfInSubprocess() {
 void UnitTestImpl::ConfigureXmlOutput() {
   const std::string& output_format = UnitTestOptions::GetOutputFormat();
   if (output_format == "xml") {
+    // listeners()->SetDefaultXmlGenerator(new XmlUnitTestResultPrinter(
+    //      UnitTestOptions::GetAbsolutePathToOutputFile().c_str()));
+    // [ILG] absolute paths require to know the current working directory,
+    // which is not available on semihosting.
     listeners()->SetDefaultXmlGenerator(new XmlUnitTestResultPrinter(
-        UnitTestOptions::GetAbsolutePathToOutputFile().c_str()));
+        UnitTestOptions::GetPathToOutputFile().c_str()));
   } else if (output_format != "") {
     printf("WARNING: unrecognized output format \"%s\" ignored.\n",
            output_format.c_str());

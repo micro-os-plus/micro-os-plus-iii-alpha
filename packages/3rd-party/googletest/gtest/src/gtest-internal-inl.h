@@ -381,6 +381,11 @@ class GTEST_API_ UnitTestOptions {
   // none was explicitly specified.
   static std::string GetAbsolutePathToOutputFile();
 
+  // Returns the path of the requested output file, or the
+  // default (test_detail.xml in the original working directory) if
+  // none was explicitly specified.
+  static std::string GetPathToOutputFile();
+
   // Functions for processing the gtest_filter flag.
 
   // Returns true iff the wildcard pattern matches the string.  The
