@@ -49,6 +49,15 @@ main (int argc, char** argv)
 {
 #endif  // GTEST_OS_WINDOWS_MOBILE
   std::cout << std::endl;
+
+  std::cout << GTEST_NAME_ << ". Compiled with " __VERSION__;
+#if defined(__x86_64__)
+  std::cout << " x86_64";
+#elif defined(__i386__)
+  std::cout << " i386";
+#endif
+  std::cout << '.' << std::endl;
+
   std::cout << "Running main(" << argc << ", [";
   for (int i = 0; i < argc; ++i)
     {
@@ -59,13 +68,7 @@ main (int argc, char** argv)
       std::cout << '"' << argv[i] << '"';
     }
   std::cout << "]) from gmock_main.cc." << std::endl;
-  std::cout << "Compiled with " __VERSION__;
-#if defined(__x86_64__)
-  std::cout << " x86_64";
-#elif defined(__i386__)
-  std::cout << " i386";
-#endif
-  std::cout << '.' << std::endl;
+
   std::cout << std::endl;
 
   // Since Google Mock depends on Google Test, InitGoogleMock() is
@@ -75,7 +78,8 @@ main (int argc, char** argv)
   int ret = RUN_ALL_TESTS ();
 
   std::cout << std::endl;
-  std::cout << "Return " << ret << ((ret == 0) ? " (PASS)" : " (FAIL)") << '.'
-      << std::endl;
+  std::cout << "Returning " << ret << ((ret == 0) ? " (PASS)" : " (FAIL)")
+      << '.' << std::endl;
+
   return ret;
 }

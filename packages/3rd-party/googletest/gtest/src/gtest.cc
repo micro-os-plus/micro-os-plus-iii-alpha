@@ -42,6 +42,7 @@
 #include <time.h>
 #include <wchar.h>
 #include <wctype.h>
+#include <string.h>
 
 #include <algorithm>
 #include <iomanip>
@@ -2777,17 +2778,31 @@ void PrettyUnitTestResultPrinter::OnTestIterationStart(
                   unit_test.random_seed());
   }
 
-  ColoredPrintf(COLOR_GREEN,  "[==========] ");
-  printf("Running %s from %s.\n",
-         FormatTestCount(unit_test.test_to_run_count()).c_str(),
-         FormatTestCaseCount(unit_test.test_case_to_run_count()).c_str());
+  if (g_executable_path.size() > 16) {
+      ColoredPrintf(COLOR_GREEN,  "[==========] ");
+      printf("Test '%s'.\n", g_executable_path.c_str());
+
+      ColoredPrintf(COLOR_GREEN,  "[==========] ");
+      printf("Running %s from %s.\n",
+             FormatTestCount(unit_test.test_to_run_count()).c_str(),
+             FormatTestCaseCount(unit_test.test_case_to_run_count()).c_str());
+
+  } else {
+      ColoredPrintf(COLOR_GREEN,  "[==========] ");
+      printf("Test '%s'. Running %s from %s.\n",
+	     g_executable_path.c_str(),
+             FormatTestCount(unit_test.test_to_run_count()).c_str(),
+             FormatTestCaseCount(unit_test.test_case_to_run_count()).c_str());
+
+  }
+
   fflush(stdout);
 }
 
 void PrettyUnitTestResultPrinter::OnEnvironmentsSetUpStart(
     const UnitTest& /*unit_test*/) {
   ColoredPrintf(COLOR_GREEN,  "[----------] ");
-  printf("Global test environment set-up.\n");
+  printf("Global test environment set-up.\n\n");
   fflush(stdout);
 }
 
@@ -2797,9 +2812,9 @@ void PrettyUnitTestResultPrinter::OnTestCaseStart(const TestCase& test_case) {
   ColoredPrintf(COLOR_GREEN, "[----------] ");
   printf("%s from %s", counts.c_str(), test_case.name());
   if (test_case.type_param() == NULL) {
-    printf("\n");
+    printf(".\n");
   } else {
-    printf(", where %s = %s\n", kTypeParamLabel, test_case.type_param());
+    printf(", where %s = %s.\n", kTypeParamLabel, test_case.type_param());
   }
   fflush(stdout);
 }
@@ -2807,7 +2822,7 @@ void PrettyUnitTestResultPrinter::OnTestCaseStart(const TestCase& test_case) {
 void PrettyUnitTestResultPrinter::OnTestStart(const TestInfo& test_info) {
   ColoredPrintf(COLOR_GREEN,  "[ RUN      ] ");
   PrintTestName(test_info.test_case_name(), test_info.name());
-  printf("\n");
+  printf(".\n");
   fflush(stdout);
 }
 
@@ -2834,10 +2849,10 @@ void PrettyUnitTestResultPrinter::OnTestEnd(const TestInfo& test_info) {
     PrintFullTestCommentIfPresent(test_info);
 
   if (GTEST_FLAG(print_time)) {
-    printf(" (%s ms)\n", internal::StreamableToString(
+    printf(" (%s ms).\n", internal::StreamableToString(
            test_info.result()->elapsed_time()).c_str());
   } else {
-    printf("\n");
+    printf(".\n");
   }
   fflush(stdout);
 }
@@ -2848,7 +2863,7 @@ void PrettyUnitTestResultPrinter::OnTestCaseEnd(const TestCase& test_case) {
   const std::string counts =
       FormatCountableNoun(test_case.test_to_run_count(), "test", "tests");
   ColoredPrintf(COLOR_GREEN, "[----------] ");
-  printf("%s from %s (%s ms total)\n\n",
+  printf("%s from %s (%s ms total).\n\n",
          counts.c_str(), test_case.name(),
          internal::StreamableToString(test_case.elapsed_time()).c_str());
   fflush(stdout);
@@ -2857,7 +2872,7 @@ void PrettyUnitTestResultPrinter::OnTestCaseEnd(const TestCase& test_case) {
 void PrettyUnitTestResultPrinter::OnEnvironmentsTearDownStart(
     const UnitTest& /*unit_test*/) {
   ColoredPrintf(COLOR_GREEN,  "[----------] ");
-  printf("Global test environment tear-down\n");
+  printf("Global test environment tear-down.\n");
   fflush(stdout);
 }
 
@@ -2881,7 +2896,7 @@ void PrettyUnitTestResultPrinter::PrintFailedTests(const UnitTest& unit_test) {
       ColoredPrintf(COLOR_RED, "[  FAILED  ] ");
       printf("%s.%s", test_case.name(), test_info.name());
       PrintFullTestCommentIfPresent(test_info);
-      printf("\n");
+      printf(".\n");
     }
   }
 }
@@ -2889,14 +2904,14 @@ void PrettyUnitTestResultPrinter::PrintFailedTests(const UnitTest& unit_test) {
 void PrettyUnitTestResultPrinter::OnTestIterationEnd(const UnitTest& unit_test,
                                                      int /*iteration*/) {
   ColoredPrintf(COLOR_GREEN,  "[==========] ");
-  printf("%s from %s ran.",
+  printf("%s from %s ran",
          FormatTestCount(unit_test.test_to_run_count()).c_str(),
          FormatTestCaseCount(unit_test.test_case_to_run_count()).c_str());
   if (GTEST_FLAG(print_time)) {
     printf(" (%s ms total)",
            internal::StreamableToString(unit_test.elapsed_time()).c_str());
   }
-  printf("\n");
+  printf(".\n");
   ColoredPrintf(COLOR_GREEN,  "[  PASSED  ] ");
   printf("%s.\n", FormatTestCount(unit_test.successful_test_count()).c_str());
 
@@ -2906,17 +2921,17 @@ void PrettyUnitTestResultPrinter::OnTestIterationEnd(const UnitTest& unit_test,
     ColoredPrintf(COLOR_RED,  "[  FAILED  ] ");
     printf("%s, listed below:\n", FormatTestCount(failed_test_count).c_str());
     PrintFailedTests(unit_test);
-    printf("\n%2d FAILED %s\n", num_failures,
+    printf("\n%2d FAILED %s.\n", num_failures,
                         num_failures == 1 ? "TEST" : "TESTS");
   }
 
   int num_disabled = unit_test.reportable_disabled_test_count();
   if (num_disabled && !GTEST_FLAG(also_run_disabled_tests)) {
     if (!num_failures) {
-      printf("\n");  // Add a spacer if no FAILURE banner is displayed.
+      printf(".\n");  // Add a spacer if no FAILURE banner is displayed.
     }
     ColoredPrintf(COLOR_YELLOW,
-                  "  YOU HAVE %d DISABLED %s\n\n",
+                  "  YOU HAVE %d DISABLED %s.\n\n",
                   num_disabled,
                   num_disabled == 1 ? "TEST" : "TESTS");
   }
