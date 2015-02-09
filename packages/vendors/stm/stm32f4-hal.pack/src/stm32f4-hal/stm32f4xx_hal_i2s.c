@@ -1077,6 +1077,12 @@ HAL_StatusTypeDef HAL_I2S_DMAResume(I2S_HandleTypeDef *hi2s)
   return HAL_OK;
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+
 /**
   * @brief Resumes the audio stream playing from the Media.
   * @param  hi2s: pointer to a I2S_HandleTypeDef structure that contains
@@ -1300,6 +1306,11 @@ void HAL_I2S_IRQHandler(I2S_HandleTypeDef *hi2s)
     HAL_I2S_ErrorCallback(hi2s);
   }
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 // [ILG]
 #if defined ( __GNUC__ )

@@ -113,6 +113,12 @@ void HAL_PWR_DeInit(void)
   __HAL_RCC_PWR_RELEASE_RESET();
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /**
   * @brief Enables access to the backup domain (RTC registers, RTC 
   *         backup data registers and backup SRAM).
@@ -136,6 +142,11 @@ void HAL_PWR_DisableBkUpAccess(void)
 {
   *(__IO uint32_t *) CR_DBP_BB = (uint32_t)DISABLE;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}
@@ -256,6 +267,12 @@ void HAL_PWR_DisableBkUpAccess(void)
   * @{
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /**
   * @brief Configures the voltage threshold detected by the Power Voltage Detector(PVD).
   * @param sConfigPVD: pointer to an PWR_PVDTypeDef structure that contains the configuration
@@ -324,8 +341,14 @@ void HAL_PWR_DisablePVD(void)
 
 // [ILG]
 #if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
+
+// [ILG]
+#if defined ( __GNUC__ )
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wsign-conversion"
 #endif
 
 /**

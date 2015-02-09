@@ -457,6 +457,12 @@ void HAL_DBGMCU_DisableDBGStandbyMode(void)
   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STANDBY);
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /**
   * @brief  Enables the I/O Compensation Cell.
   * @note   The I/O compensation cell can be used only when the device supply
@@ -511,6 +517,11 @@ void HAL_DisableMemorySwappingBank(void)
   *(__IO uint32_t *)UFB_MODE_BB = (uint32_t)DISABLE;
 }
 #endif /* STM32F427xx || STM32F437xx || STM32F429xx || STM32F439xx */
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}

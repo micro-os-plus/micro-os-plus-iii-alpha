@@ -197,6 +197,12 @@ static void CRYPEx_GCMCCM_DMAError(DMA_HandleTypeDef *hdma)
   HAL_CRYP_ErrorCallback(hcryp);
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Writes the Key in Key registers. 
   * @param  hcryp: pointer to a CRYP_HandleTypeDef structure that contains
@@ -421,6 +427,11 @@ static HAL_StatusTypeDef CRYPEx_GCMCCM_SetHeaderPhase(CRYP_HandleTypeDef *hcryp,
   /* Return function status */
   return HAL_OK;
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Sets the DMA configuration and start the DMA transfer.

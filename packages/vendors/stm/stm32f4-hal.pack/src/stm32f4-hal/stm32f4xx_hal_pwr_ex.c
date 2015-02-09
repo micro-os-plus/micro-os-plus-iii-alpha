@@ -152,6 +152,12 @@
   * @{
   */
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+
 /**
   * @brief Enables the Backup Regulator.
   * @retval HAL status
@@ -461,6 +467,11 @@ HAL_StatusTypeDef HAL_PWREx_EnterUnderDriveSTOPMode(uint32_t Regulator, uint8_t 
 /**
   * @}
   */
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @}

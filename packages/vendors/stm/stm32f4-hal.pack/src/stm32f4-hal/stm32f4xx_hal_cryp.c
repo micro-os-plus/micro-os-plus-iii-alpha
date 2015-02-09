@@ -205,6 +205,12 @@ static void CRYP_DMAError(DMA_HandleTypeDef *hdma)
   HAL_CRYP_ErrorCallback(hcryp);
 }
 
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
+
 /**
   * @brief  Writes the Key in Key registers. 
   * @param  hcryp: pointer to a CRYP_HandleTypeDef structure that contains
@@ -302,6 +308,11 @@ static void CRYP_SetInitVector(CRYP_HandleTypeDef *hcryp, uint8_t *InitVector, u
     break;
   }
 }
+
+// [ILG]
+#if defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 /**
   * @brief  Process Data: Writes Input data in polling mode and read the output data
