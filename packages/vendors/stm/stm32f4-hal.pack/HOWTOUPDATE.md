@@ -10,4 +10,7 @@ The original ST sources are available as a separate branch. This branch should b
 - update src/stm32f4-hal/README_HAL.txt
 - (in Git) change to master
 - merge the stm32f4-hal
+- process conflicts
+
+(Don't forget to update the CMSI part too)
 
