@@ -1,3 +1,6 @@
+No longer actual, the f4 hal sources were moved to a separate project.
+
+***
 The original ST sources are available as a separate branch. This branch should be updated with each new HAL version, then merged into the main branch.
 
 - (in Git) change to checkout the **stm32f4-hal** branch
@@ -12,5 +15,4 @@ The original ST sources are available as a separate branch. This branch should b
 - merge the stm32f4-hal
 - process conflicts
 
-(Don't forget to update the CMSI part too)
-
+(Don't forget to update the CMSIS part too)
